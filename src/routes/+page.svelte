@@ -1,8 +1,18 @@
 <script>
-    import Navbar from '$lib/components/Navbar.svelte';
 </script>
 
-<!-- <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p> -->
+<svelte:head>
+	<title>Rawsie</title>
+	<meta
+		name="description"
+		content="Rawsie's personal website — projects, research, blogs and sometimes random things."
+	/>
+</svelte:head>
 
-<Navbar />
+<div class="site">
+
+	<main>
+	Rawsie
+	</main>
+
+</div>
