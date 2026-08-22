@@ -1,8 +1,7 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-
-    import logo from '$lib/assets/logo/rawsieCyan.svg';
+    import Logo from '$lib/components/Logo.svelte';
 </script>
 
 <svelte:head>
@@ -18,8 +17,8 @@
 <main>
 	<section class="about">
 		<div class="container">
-			<div class="photo-placeholder">
-                <img src={logo} alt="Rawsie logo" />
+			<div class="photo">
+                <Logo class="text-[#5be4ff]" />
 				<div class="orb cyan"></div>
 				<div class="orb pink"></div>
 			</div>
@@ -34,7 +33,7 @@
                 </p>
                 <br />
                 <p>
-                    I am interested in <span class="cyan-text">AI research</span> and <span class="cyan-text">software development</span>. 
+                    I am interested in <span class="pink-text">AI research</span> and <span class="pink-text">software development</span>. 
                     I enjoy building things that turn ideas into products that I or other people can actually use. 
                 </p>
                 <br />
@@ -78,6 +77,14 @@
 					</div>
 				</div>
 
+                <div class="item">
+					<span>2026</span>
+					<div>
+						<h3>rawsie.dev</h3>
+						<p>Started building and putting my websites, projects, and ideas out into the world.</p>
+					</div>
+				</div>
+
 				<div class="item">
 					<span>2025</span>
 					<div>
@@ -93,6 +100,22 @@
                         <p>
                             Joined High School of the Gifted and started taking my interest in computer science more seriously.
                         </p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <span>2019</span>
+                    <div>
+                        <h3>A small turning point</h3>
+                        <p>Won my first competitive programming prize. It was small, but it made me realize I wanted to keep going.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <span>2017</span>
+                    <div>
+                        <h3>A new beginning</h3>
+                        <p>My first real exposure to a computer. I had no idea what I was doing, but I've been hooked ever since.</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +140,7 @@
 		gap: 100px;
 	}
 
-	.photo-placeholder {
+	.photo {
 		position: relative;
 
 		aspect-ratio: 1;
@@ -135,38 +158,28 @@
 		background: #0b0b12;
 	}
 
-	.photo-placeholder span {
-		position: relative;
-		z-index: 2;
-
-		color: white;
-		font-family: 'Space Grotesk', sans-serif;
-		font-size: 35px;
-		font-weight: 700;
-		letter-spacing: -0.05em;
-	}
-
 	.orb {
-	position: absolute;
+        position: absolute;
 
-	width: 220px;
-	height: 220px;
+        width: 280px;
+        height: 280px;
 
-	border-radius: 50%;
-	filter: blur(60px);
-}
+        border-radius: 50%;
+        filter: blur(50px);
+        z-index: 0;
+    }
 
-	.orb.cyan {
-	top: -70px;
-	left: -60px;
-	background: rgba(91, 228, 255, 0.15);
-}
+    .orb.cyan {
+        top: -40px;
+        left: -40px;
+        background: rgba(91, 228, 255, 0.15);
+    }
 
-.orb.pink {
-	right: -70px;
-	bottom: -70px;
-	background: rgba(255, 205, 254, 0.15);
-}
+    .orb.pink {
+        right: -40px;
+        bottom: -40px;
+        background: rgba(255, 205, 254, 0.15);
+    }
 
 	.text .lead {
 		margin-top: 0;
