@@ -11,10 +11,10 @@
 
 	const links = [
 		{ name: 'About', href: '/about' },
-		{ name: 'Work', href: '/work' },
-		{ name: 'Research', href: '/research' },
-        { name: 'Blog', href: '/blog' },
-		{ name: 'Contact', href: '/contact' }
+		// { name: 'Work', href: '/work' },
+		// { name: 'Research', href: '/research' },
+        // { name: 'Blog', href: '/blog' },
+		// { name: 'Contact', href: '/contact' }
 	] as const;
 
 	import { resolve } from '$app/paths';
