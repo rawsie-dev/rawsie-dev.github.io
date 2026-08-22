@@ -1,39 +1,101 @@
 <script>
 	import Navbar from '$lib/components/Navbar.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+
+    import logo from '$lib/assets/logo/rawsieCyan.svg';
 </script>
 
 <svelte:head>
-	<title>Contact — Rawsie</title>
+	<title>About — Rawsie</title>
+	<meta
+		name="description"
+		content="Learn more about Rawsie, their interests, background, and things they build."
+	/>
 </svelte:head>
 
 <Navbar />
 
 <main>
-	<section class="contact">
+	<section class="about">
 		<div class="container">
-			<div class="main-contact">
-				<span class="label">GET IN TOUCH</span>
-
-				<a class="email cyan-text" href="mailto:me@rawsie.dev">
-					me@rawsie.dev
-					<span>↗</span>
-				</a>
+			<div class="photo-placeholder">
+                <img src={logo} alt="Rawsie logo" />
+				<div class="orb cyan"></div>
+				<div class="orb pink"></div>
 			</div>
 
-			<div class="socials">
-				<a href="https://github.com/rawsie-dev">
-					<span>01</span>
-					GitHub
-					<span>↗</span>
-				</a>
+			<div class="text">
+                <p class="lead">
+                    Heya! I'm <span class="cyan-text">Rawsie</span>
+                </p>
+                <br />
+                <p>
+                    I'm a student, researcher, and builder who likes understanding how things work, and then trying to make them better.
+                </p>
+                <br />
+                <p>
+                    I am interested in <span class="cyan-text">AI research</span> and <span class="cyan-text">software development</span>. 
+                    I enjoy building things that turn ideas into products that I or other people can actually use. 
+                </p>
+                <br />
+				<p>
+					Outside of research, I like building small websites, games, tools, and other things that give me an excuse to learn something <span class="cyan-text">new</span>.
+				</p>
 
-				<a href="mailto:me@rawsie.dev">
-					<span>02</span>
-					Email
-					<span>↗</span>
-				</a>
+				<div class="facts">
+                    <div>
+						<span>01</span>
+						<h3>AI Research</h3>
+						<p>Exploring how neural networks learn.</p>
+					</div>
+
+					<div>
+						<span>02</span>
+						<h3>Software Development</h3>
+						<p>Learning, experimenting, and building practical products.</p>
+					</div>
+
+					<div>
+						<span>03</span>
+						<h3>Creative Work</h3>
+						<p>Making things that feel like mine, including some music composition.</p>
+					</div>
+				</div>
 			</div>
+		</div>
+	</section>
+
+	<section class="timeline">
+		<div class="container">
+			<div class="section-label">A LITTLE HISTORY</div>
+
+			<div class="timeline-list">
+                <div class="item">
+					<span>NOW</span>
+					<div>
+						<h3>What's next?</h3>
+						<p>Still figuring that part out.</p>
+					</div>
+				</div>
+
+				<div class="item">
+					<span>2025</span>
+					<div>
+						<h3>AI research</h3>
+						<p>My first real exposure to AI research, and the beginning of wanting to understand what happens beyond simply using AI.</p>
+					</div>
+				</div>
+
+				<div class="item">
+                    <span>2024</span>
+                    <div>
+                        <h3>A new environment</h3>
+                        <p>
+                            Joined High School of the Gifted and started taking my interest in computer science more seriously.
+                        </p>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 </main>
@@ -41,87 +103,173 @@
 <Footer />
 
 <style>
-	.contact {
-		padding: 50px 0 180px;
-
+	.about {
+		padding: 80px 0 150px;
 		background: #0b0b12;
 	}
 
 	.container {
 		width: min(1100px, calc(100% - 40px));
 		margin: auto;
+
+		display: grid;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 100px;
 	}
 
-	.main-contact {
-		padding: 60px 0;
+	.photo-placeholder {
+		position: relative;
 
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-	}
+		aspect-ratio: 1;
 
-	.label {
-		color: #686875;
-		font-size: 13px;
-		letter-spacing: 0.15em;
-	}
-
-	.email {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 
-		margin-top: 30px;
+		overflow: hidden;
+        isolation: isolate;
 
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 24px;
+
+		background: #0b0b12;
+	}
+
+	.photo-placeholder span {
+		position: relative;
+		z-index: 2;
+
+		color: white;
 		font-family: 'Space Grotesk', sans-serif;
-		font-size: clamp(30px, 6vw, 70px);
+		font-size: 35px;
+		font-weight: 700;
 		letter-spacing: -0.05em;
-		text-decoration: none;
-
-		transition: color 0.2s ease;
 	}
 
-	.email:hover {
+	.orb {
+	position: absolute;
+
+	width: 220px;
+	height: 220px;
+
+	border-radius: 50%;
+	filter: blur(60px);
+}
+
+	.orb.cyan {
+	top: -70px;
+	left: -60px;
+	background: rgba(91, 228, 255, 0.15);
+}
+
+.orb.pink {
+	right: -70px;
+	bottom: -70px;
+	background: rgba(255, 205, 254, 0.15);
+}
+
+	.text .lead {
+		margin-top: 0;
+
 		color: white;
+
+		font-size: 27px;
+		line-height: 1.45;
 	}
 
-	.email span {
-		font-family: Inter, sans-serif;
-		font-size: 30px;
+	.text > p {
+		color: #888895;
+		font-size: 16px;
+		line-height: 1.8;
 	}
 
-	.socials {
-		margin-top: 70px;
-	}
-
-	.socials a {
+	.facts {
 		display: grid;
-		grid-template-columns: 60px 1fr 30px;
-		align-items: center;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 15px;
 
-		padding: 25px 0;
-
-		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-
-		color: white;
-
-		font-size: 17px;
-		text-decoration: none;
+		margin-top: 60px;
 	}
 
-	.socials a:first-child {
-		border-top: 1px solid rgba(255, 255, 255, 0.07);
+	.facts > div {
+		padding-top: 20px;
+
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	.socials a > span:first-child {
-		color: #686875;
+	.facts span {
+		color: #5be4ff;
 		font-size: 10px;
 	}
 
-	.socials a > span:last-child {
-		color: #686875;
+	.facts h3 {
+		margin: 15px 0 8px;
+
+		color: white;
+		font-size: 15px;
 	}
 
-	.socials a:hover > span:last-child {
+	.facts p {
+		margin: 0;
+		color: #686875;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	.timeline {
+		padding: 130px 0;
+		background: #0b0b12;
+	}
+
+	.section-label {
+		margin-bottom: 50px;
+
+		color: #686875;
+		font-size: 11px;
+		letter-spacing: 0.15em;
+	}
+
+	.timeline-list {
+		max-width: 800px;
+	}
+
+	.item {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		gap: 30px;
+
+		padding: 30px 0;
+
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.item > span {
 		color: #5be4ff;
+		font-size: 12px;
+	}
+
+	.item h3 {
+		margin: 0 0 8px;
+
+		color: white;
+		font-size: 20px;
+	}
+
+	.item p {
+		margin: 0;
+
+		color: #686875;
+		font-size: 14px;
+	}
+
+	@media (max-width: 750px) {
+		.container {
+			grid-template-columns: 1fr;
+			gap: 50px;
+		}
+
+		.facts {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
