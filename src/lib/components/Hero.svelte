@@ -159,14 +159,6 @@
 		color: #d0d0d8;
 	}
 
-	.cyan-text {
-		color: #5be4ff;
-	}
-
-	.pink-text {
-		color: #ffcdfe;
-	}
-
 	.actions {
 		display: flex;
 		justify-content: center;
