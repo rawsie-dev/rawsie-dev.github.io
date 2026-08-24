@@ -2,166 +2,72 @@
 	import { resolve } from '$app/paths';
 </script>
 
-<section class="hero" role="presentation">
+<section
+	class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b0b12]"
+	role="presentation"
+>
+	<!-- Background glows -->
 	<div class="glow cyan"></div>
 	<div class="glow pink"></div>
-	<div class="hero-content">
-		<p class="eyebrow">HELLO, I'M</p>
-		<h1>RAWSIE</h1>
+
+	<!-- Hero content -->
+	<div class="relative z-2 w-[min(1000px,calc(100%-40px))] text-center">
+		<p class="mb-4.5 text-[18px] tracking-[0.25em] text-[#a7a7b5]">
+			HELLO, I'M
+		</p>
+
+		<h1
+			class="m-0 text-[clamp(80px,17vw,210px)] font-extrabold leading-[0.85] tracking-[-0.07em] text-white [text-shadow:0_0_80px_rgba(91,228,255,0.08),0_0_120px_rgba(255,205,254,0.05)]"
+		>
+			RAWSIE
+		</h1>
 
 		<div class="rainbow-line"></div>
 
-		<p class="tagline">
+		<p
+			class="mx-auto max-w-162.5 text-[clamp(20px,3vw,30px)] leading-[1.4] text-[#d0d0d8]"
+		>
 			I build things with
-			<span class="cyan-text">code</span>,
-			<span class="cyan-text">AI</span>,
+			<span class="text-[#5be4ff]">code</span>,
+			<span class="text-[#5be4ff]">AI</span>,
 			and
-			<span class="pink-text">curiosity</span>.
+			<span class="text-[#ffcdfe]">curiosity</span>.
 		</p>
 
-		<div class="actions">
-			<a href="#projects" class="primary">View my projects</a>
-			<a href={resolve('/about')} class="secondary">About me</a>
+		<div class="mt-10 flex justify-center gap-3.5 max-[600px]:flex-col max-[600px]:items-center">
+			<a
+				href="#projects"
+				class="rounded-full bg-white px-5 py-3.25 text-[14px] text-[#0b0b12] no-underline transition-transform duration-200 ease-in-out hover:-translate-y-0.5 max-[600px]:w-45 max-[600px]:text-center"
+			>
+				View my projects
+			</a>
+
+			<a
+				href={resolve('/about')}
+				class="rounded-full border border-white/15 px-5 py-3.25 text-[14px] text-white no-underline transition-[background,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:bg-white/6 max-[600px]:w-45 max-[600px]:text-center"
+			>
+				About me
+			</a>
 		</div>
 	</div>
 
-	<div class="scroll">
-		<span></span>
+	<!-- Scroll indicator -->
+	<div
+		class="absolute bottom-7.5 flex flex-col items-center gap-2.5 text-[9px] tracking-[0.2em] text-[#686875]"
+	>
+		<span class="h-8.75 w-px bg-linear-to-b from-[#5be4ff] to-transparent"></span>
 		SCROLL TO EXPLORE
 	</div>
 </section>
 
 <style>
-	.hero {
-		position: relative;
-		min-height: 100vh;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		overflow: hidden;
-
-		background: #0b0b12;
-	}
-
-	.hero::before {
-		content: '';
-
-		position: absolute;
-		inset: 0;
-
-		background-image:
-			linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-
-		background-size: 80px 80px;
-
-		mask-image: radial-gradient(circle at center, black, transparent 75%);
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 2;
-
-		width: min(1000px, calc(100% - 40px));
-
-		text-align: center;
-	}
-
-	.eyebrow {
-		margin: 0 0 18px;
-
-		font-size: 18px;
-		letter-spacing: 0.25em;
-		color: #a7a7b5;
-	}
-
-	h1 {
-		margin: 0;
-
-		font-size: clamp(80px, 17vw, 210px);
-		line-height: 0.85;
-		letter-spacing: -0.07em;
-
-		font-weight: 800;
-
-		color: white;
-
-		text-shadow:
-			0 0 80px rgba(91, 228, 255, 0.08),
-			0 0 120px rgba(255, 205, 254, 0.05);
-	}
-
-
-
-	.tagline {
-		margin: auto;
-
-		max-width: 650px;
-
-		font-size: clamp(20px, 3vw, 30px);
-		line-height: 1.4;
-
-		color: #d0d0d8;
-	}
-
-	.actions {
-		display: flex;
-		justify-content: center;
-		gap: 14px;
-
-		margin-top: 40px;
-	}
-
-	.actions a {
-		padding: 13px 20px;
-
-		border-radius: 100px;
-
-		font-size: 14px;
-		text-decoration: none;
-
-		transition:
-			transform 0.2s ease,
-			background 0.2s ease;
-	}
-
-	.primary {
-		background: white;
-		color: #0b0b12;
-	}
-
-	.primary:hover {
-		transform: translateY(-2px);
-	}
-
-	/* .primary span {
-		margin-left: 5px;
-	} */
-
-	.secondary {
-		border: 1px solid rgba(255, 255, 255, 0.15);
-		color: white;
-	}
-
-	.secondary:hover {
-		background: rgba(255, 255, 255, 0.06);
-		transform: translateY(-2px);
-	}
-
 	.glow {
 		position: absolute;
-
 		width: 500px;
 		height: 500px;
-
 		border-radius: 50%;
-
 		filter: blur(120px);
-
 		pointer-events: none;
-
 		transition:
 			left 1s ease,
 			top 1s ease,
@@ -175,41 +81,5 @@
 
 	.glow.pink {
 		background: rgba(255, 205, 254, 0.08);
-	}
-
-	.scroll {
-		position: absolute;
-		bottom: 30px;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 10px;
-
-		font-size: 9px;
-		letter-spacing: 0.2em;
-		color: #686875;
-	}
-
-	.scroll span {
-		width: 1px;
-		height: 35px;
-
-		background: linear-gradient(
-			#5be4ff,
-			transparent
-		);
-	}
-
-	@media (max-width: 600px) {
-		.actions {
-			flex-direction: column;
-			align-items: center;
-		}
-
-		.actions a {
-			width: 180px;
-			text-align: center;
-		}
 	}
 </style>

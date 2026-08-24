@@ -65,7 +65,7 @@
         {/if}
         <!-- Normal Posts -->
         {#if recentPosts.length > 0}
-            <section class="mx-auto max-w-6xl">
+            <section class="mx-auto max-w-6xl py-10">
                 <div class="mb-8 flex items-center gap-4">
                     <span class="text-sm font-medium text-[#5be4ff]">
                         LATEST POSTS

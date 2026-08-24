@@ -1,7 +1,7 @@
-<footer id="contact" class="border-t border-white/6 bg-[#0b0b12] px-5 pb-8 pt-32">
+<footer id="contact" class="border-t border-white/7 bg-[#0b0b12] px-5 pb-8">
 	<div class="mx-auto w-full max-w-275">
 		<div
-			class="grid grid-cols-1 items-center gap-5 border-t border-white/[0.07] pt-6
+			class="grid grid-cols-1 items-center gap-5 pt-6
 			       text-[11px] text-[#686875]
 			       sm:grid-cols-[1fr_auto_1fr] sm:gap-0"
 		>
