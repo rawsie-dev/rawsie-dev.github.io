@@ -34,6 +34,25 @@ import { error } from '@sveltejs/kit';
  * }} ProjectsModule
  */
 
+/**
+ * @typedef {{
+ *   title: string;
+ *   date: string;
+ *   description: string;
+ *   status: string;
+ *   authors: string[];
+ *   tags?: string[];
+ *   links?: { name: string; url: string }[];
+ *   featured?: boolean;
+ *   hidden?: boolean;
+ *   summary?: string;
+ * }} ResearchMetadata
+ *
+ * @typedef {{
+ *   metadata: ResearchMetadata;
+ * }} ResearchModule
+ */
+
 /** @type {Record<string, PostModule>} */
 const posts = import.meta.glob('/src/lib/content/blog/*.md', {
 	eager: true
@@ -41,6 +60,11 @@ const posts = import.meta.glob('/src/lib/content/blog/*.md', {
 
 /** @type {Record<string, ProjectsModule>} */
 const projects = import.meta.glob('/src/lib/content/projects/*.md', {
+    eager: true
+});
+
+/** @type {Record<string, ResearchModule>} */
+const research = import.meta.glob('/src/lib/content/research/*.md', {
     eager: true
 });
 
@@ -89,6 +113,29 @@ export function load() {
 				new Date(a.metadata.date).getTime()
 		);
 
+	const researchEntries = Object.entries(research).map(([path, research]) => {
+			const slug = path.split('/').pop()?.replace('.md', '');
+	
+			if (!slug) {
+				throw error(500, 'Invalid research filename');
+			}
+	
+			return {
+				slug,
+				metadata: research.metadata
+			};
+		})
+		
+		// Remove hidden research
+		.filter((research) => !research.metadata.hidden);
+		
+	
+		projectEntries.sort(
+			(a, b) =>
+				new Date(b.metadata.date).getTime() -
+				new Date(a.metadata.date).getTime()
+		);
+
 	return {
 		featuredPosts: postEntries.filter(
 			(post) => post.metadata.featured
@@ -98,6 +145,11 @@ export function load() {
 		 // Featured projects
         featuredProjects: projectEntries.filter(
             (project) => project.metadata.featured
-        )
+        ),
+
+		// Featured research
+		featuredResearch: researchEntries.filter(
+			(research) => research.metadata.featured
+		),
 	};
 }

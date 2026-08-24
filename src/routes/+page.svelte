@@ -4,6 +4,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import BlogPreview from '$lib/components/BlogPreview.svelte';
 	import ProjectsPreview from '$lib/components/ProjectsPreview.svelte';
+	import ResearchPreview from '$lib/components/ResearchPreview.svelte';
 
 	let { data } = $props();
 
@@ -26,6 +27,8 @@
 		<BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
 		<div class="my-20 h-px bg-[#27272a]"></div>
 		<ProjectsPreview featuredProjects={data.featuredProjects} />
+		<div class="my-20 h-px bg-[#27272a]"></div>
+		<ResearchPreview featuredResearch={data.featuredResearch} />
 	</main>
 
 </div>

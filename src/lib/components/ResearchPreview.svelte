@@ -1,23 +1,23 @@
 <script>
 	import { resolve } from '$app/paths';
 
-	let { featuredProjects = [] } = $props();
+	let { featuredResearch = [] } = $props();
 </script>
 
 <main>
-    <section class="mx-auto max-w-6xl px-6 py-20" id="projects">
+    <section class="mx-auto max-w-6xl px-6 py-20" id="research">
         <div class="mb-10">
             <p class="text-sm font-medium uppercase tracking-widest text-[#5be4ff]">
-                Things I've built and experimented with.
+                Questions I've explored and investigated.
             </p>
 
             <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5fa] sm:text-5xl">
-                Projects
+                Research
             </h2>
         </div>
     
-        <!-- Featured Projects -->
-		{#if featuredProjects.length > 0}
+        <!-- Featured Research -->
+		{#if featuredResearch.length > 0}
             <section class="mb-8">
                 <div class="mb-8 flex items-center gap-4">
                     <span class="text-sm font-medium text-[#5be4ff]">FEATURED</span>
@@ -25,9 +25,9 @@
                 </div>
 
                 <div class="space-y-6">
-                    {#each featuredProjects as post (post.slug)}
+                    {#each featuredResearch as post (post.slug)}
                         <a
-                            href={resolve(`/projects/${post.slug}`)}
+                            href={resolve(`/research/${post.slug}`)}
                             class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10"
                         >
                             <!-- Header -->
@@ -89,7 +89,7 @@
                                 <span
                                     class="shrink-0 text-sm text-[#71717a] transition-colors group-hover:text-[#5be4ff]"
                                 >
-                                    View project →
+                                    View research →
                                 </span>
                             </div>
                         </a>
@@ -101,10 +101,10 @@
 
         <div class="mt-8 text-center">
             <a
-                href={resolve("/projects")}
+                href={resolve("/research")}
                 class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5fa]"
             >
-                View all projects →
+                View all research →
             </a>
         </div>
     </section>

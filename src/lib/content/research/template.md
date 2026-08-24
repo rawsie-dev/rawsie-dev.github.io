@@ -7,9 +7,11 @@ authors:
   - "Rawsie"
   - "Person #2"
 tags:
-  - School Project
-  - Project
+  - CNN
+  - Machine Learning
 links:
+  - name: Paper
+    url: https://example.pdf
   - name: GitHub
     url: https://github.com/rawsiedev/project
   - name: Demo
@@ -36,11 +38,6 @@ Briefly explain what the project is and why you made it.
 Describe your contribution and the main features.
 
 ## Technologies
-
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
 
 ## Results
 
