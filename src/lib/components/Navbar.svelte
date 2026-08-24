@@ -15,7 +15,7 @@
 		{ name: 'Projects', href: '/projects' },
 		{ name: 'Research', href: '/research' },
         { name: 'Blog', href: '/blog' },
-		// { name: 'Contact', href: '/contact' }
+		{ name: 'Contact', href: '/contact' }
 	] as const;
 
 	import { resolve } from '$app/paths';
