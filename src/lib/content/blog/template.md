@@ -1,15 +1,15 @@
 ---
-title: "Blog 1"
-date: "2026-12-19"
+title: "Blog Template"
+date: "2026-08-19"
 description: "Welcome to my new blog."
 tags:
   - Personal
   - Blog
-  - Hobbies
 featured: false
+hidden: true
 ---
 
-# This is Blog 1
+# This is the Template Blog
 
 Welcome to my blog.
 

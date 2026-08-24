@@ -7,6 +7,7 @@ import { error } from '@sveltejs/kit';
  *   description: string;
  *   tags?: string[];
  *   featured?: boolean;
+ *   hidden?: boolean;
  * }} PostMetadata
  *
  * @typedef {{
@@ -31,7 +32,11 @@ export function load() {
             slug,
             metadata: post.metadata
         };
-    });
+    })
+    
+    // Remove hidden posts
+    .filter((post) => !post.metadata.hidden);
+    
 
     postEntries.sort(
         (a, b) =>
@@ -40,6 +45,14 @@ export function load() {
     );
 
     return {
-        posts: postEntries
+        // Featured posts
+        featuredPosts: postEntries.filter(
+            (post) => post.metadata.featured
+        ),
+
+        // Normal posts
+        posts: postEntries.filter(
+            (post) => !post.metadata.featured
+        )
     };
 }

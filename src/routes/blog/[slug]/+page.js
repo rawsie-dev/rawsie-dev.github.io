@@ -7,6 +7,7 @@ import { error } from '@sveltejs/kit';
  *   description: string;
  *   tags?: string[];
  *   featured?: boolean;
+ *   hidden?: boolean;
  * }} PostMetadata
  *
  * @typedef {{

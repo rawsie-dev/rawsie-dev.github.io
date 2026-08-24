@@ -26,7 +26,7 @@
 		<a href={resolve("/")} class="logo flex items-center gap-2">
 			<Logo class="w-10 h-10 text-[#5be4ff] group-hover:text-[#FFCDFE] transition-colors duration-300" />
 
-			<span class="font-fredoka">RAWSIE</span>
+			<!-- <span class="font-fredoka">RAWSIE</span> -->
 		</a>
 		<div class="links">
 			{#each links as link (link.href)}
