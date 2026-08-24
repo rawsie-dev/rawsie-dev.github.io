@@ -2,6 +2,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
     import Logo from '$lib/components/Logo.svelte';
+	import PageHeader from '$lib/components/PageHeader.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +14,7 @@
 </svelte:head>
 
 <Navbar />
-
+<PageHeader title="About Me" description="Learn more about Rawsie, their interests, background, and things they build." />
 <main>
 	<section class="about">
 		<div class="container">
@@ -231,7 +232,7 @@
 	}
 
 	.timeline {
-		padding: 130px 0;
+		padding: 0px 0;
 		background: #0b0b12;
 	}
 
@@ -239,7 +240,7 @@
 		margin-bottom: 50px;
 
 		color: #686875;
-		font-size: 11px;
+		font-size: 18px;
 		letter-spacing: 0.15em;
 	}
 

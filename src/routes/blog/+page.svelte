@@ -1,6 +1,7 @@
 <script>
     import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+    import PageHeader from '$lib/components/PageHeader.svelte';
 	let { data } = $props();
     import { resolve } from '$app/paths';
 </script>
@@ -11,10 +12,10 @@
 	<title>Blog — Rawsie</title>
 	<meta
 		name="description"
-		content="Thoughts, experiments, and things I've learned while exploring AI, computer science, and research."
+		content="A place for random thoughts about whatever happens to interest me and I find worth sharing."
 	/>
 </svelte:head>
-
+<PageHeader title="Blog" description="A place for random thoughts about whatever happens to interest me and I find worth sharing."/>
 <main>
 	<div class="mx-auto max-w-5xl px-6 py-20">
 
