@@ -136,9 +136,9 @@
 		transform: translateY(-2px);
 	}
 
-	.primary span {
+	/* .primary span {
 		margin-left: 5px;
-	}
+	} */
 
 	.secondary {
 		border: 1px solid rgba(255, 255, 255, 0.15);

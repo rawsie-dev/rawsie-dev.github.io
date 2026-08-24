@@ -1,9 +1,31 @@
-<script>
+<script lang="ts">
     import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
     import PageHeader from '$lib/components/PageHeader.svelte';
 	let { data } = $props();
     import { resolve } from '$app/paths';
+
+    const statusStyles: Record<string, {
+        text: string;
+        border: string;
+        background: string;
+    }> = {
+        Completed: {
+            text: '#86efac',
+            border: '#86efac40',
+            background: '#86efac08'
+        },
+        Ongoing: {
+            text: '#fde68a',
+            border: '#fde68a40',
+            background: '#fde68a08'
+        },
+        Archived: {
+            text: '#71717a',
+            border: '#71717a40',
+            background: '#71717a08'
+        }
+    };
 </script>
 
 <Navbar />
@@ -29,47 +51,67 @@
                 </div>
 
                 <div class="space-y-6">
-                    {#each data.featuredProjects as project (project.slug)}
+                    {#each data.featuredProjects as post (post.slug)}
+                        {@const status = statusStyles[post.metadata.status] ?? statusStyles.Archived}
                         <a
-                            href={resolve(`/projects/${project.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/[0.03] sm:p-10"
+                            href={resolve(`/projects/${post.slug}`)}
+                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10"
+                            style="
+                                border-color: {status.border};
+                                background-color: {status.background};
+                            "
                         >
+                        
                             <!-- Header -->
                             <div class="flex items-start justify-between gap-6">
                                 <time
-                                    datetime={project.metadata.date}
+                                    datetime={post.metadata.date}
                                     class="text-sm text-[#71717a]"
                                 >
-                                    {new Date(project.metadata.date).toLocaleDateString('en-US', {
+                                    {new Date(post.metadata.date).toLocaleDateString('en-US', {
                                         year: 'numeric',
                                         month: 'long',
                                         day: 'numeric'
                                     })}
                                 </time>
-
                                 <span
-                                    class="text-xl text-[#71717a] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#5be4ff]"
+                                    class="text-xl text-[#71717a] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                                    style="--status-color: {status.text}"
                                 >
                                     ↗
                                 </span>
                             </div>
 
                             <!-- Title -->
-                            <h2
-                                class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5fa] transition-colors duration-300 group-hover:text-[#5be4ff] sm:text-5xl"
-                            >
-                                {project.metadata.title}
-                            </h2>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <h2
+                                    class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5fa] transition-colors duration-300 group-hover:text-(--status-color) sm:text-5xl" style={`--status-color: ${status.text}`}
+                                >
+                                    {post.metadata.title}
+                                </h2>
+                                {#if post.metadata.status}
+                                    <span
+                                        class="translate-y-4 rounded-full border px-3 py-1.5 text-xs font-medium"
+                                        style="
+                                            color: {status.text};
+                                            border-color: {status.border};
+                                            background-color: {status.background};
+                                        "
+                                    >
+                                        {post.metadata.status}
+                                    </span>
+                                {/if}
+                            </div>
 
                             <!-- Description -->
                             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-[#a1a1aa]">
-                                {project.metadata.description}
+                                {post.metadata.description}
                             </p>
 
                             <!-- Summary -->
-                            {#if project.metadata.summary}
+                            {#if post.metadata.summary}
                                 <p class="mt-8 max-w-3xl text-base leading-7 text-[#d4d4d8] whitespace-pre-line">
-                                    {project.metadata.summary}
+                                    {post.metadata.summary}
                                 </p>
                             {/if}
 
@@ -78,9 +120,9 @@
 
                             <!-- Bottom -->
                             <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-                                {#if project.metadata.tags}
+                                {#if post.metadata.tags}
                                     <div class="flex flex-wrap gap-2">
-                                        {#each project.metadata.tags as tag (tag)}
+                                        {#each post.metadata.tags as tag (tag)}
                                             <span
                                                 class="rounded-full border border-[#5be4ff]/20 bg-[#5be4ff]/5 px-3 py-1 text-xs font-medium text-[#5be4ff]"
                                             >
@@ -115,18 +157,24 @@
 				</p>
 			{:else}
 				<div class="space-y-4">
-					{#each data.projects as project (project.slug)}
-						<a
-							href={resolve(`/projects/${project.slug}`)}
-							class="group block rounded-2xl border border-[#27272a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5"
-						>
+					{#each data.projects as post (post.slug)}
+						{@const status = statusStyles[post.metadata.status] ?? statusStyles.Archived}
+
+                        <a
+                            href={resolve(`/projects/${post.slug}`)}
+                            class="group block rounded-2xl border p-6 transition-all duration-300"
+                            style="
+                                border-color: {status.border};
+                                background-color: {status.background};
+                            "
+                        >
 							<article>
 								<div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 									<time
-										datetime={project.metadata.date}
+										datetime={post.metadata.date}
 										class="order-1 shrink-0 text-sm text-[#71717a] sm:order-2"
 									>
-										{new Date(project.metadata.date).toLocaleDateString('en-US', {
+										{new Date(post.metadata.date).toLocaleDateString('en-US', {
 											year: 'numeric',
 											month: 'long',
 											day: 'numeric'
@@ -134,17 +182,31 @@
 									</time>
 
 									<div class="order-2 max-w-3xl sm:order-1">
-										<h2 class="text-2xl font-semibold tracking-tight text-[#f5f5fa] transition-colors group-hover:text-[#5be4ff]">
-											{project.metadata.title}
-										</h2>
+                                        <div class="flex flex-wrap items-center gap-3">
+                                            <h2 class="text-2xl font-semibold tracking-tight text-[#f5f5fa] transition-colors group-hover:text-(--status-color)" style={`--status-color: ${status.text}`}>
+                                                {post.metadata.title}
+                                            </h2>
+                                            {#if post.metadata.status}
+                                                <span
+                                                    class="rounded-full border px-3 py-1 text-xs font-medium"
+                                                    style="
+                                                        color: {status.text};
+                                                        border-color: {status.border};
+                                                        background-color: {status.background};
+                                                    "
+                                                >
+                                                    {post.metadata.status}
+                                                </span>
+                                            {/if}
+                                        </div>
 
 										<p class="mt-2 leading-relaxed text-[#a1a1aa]">
-											{project.metadata.description}
+											{post.metadata.description}
 										</p>
 
-										{#if project.metadata.tags}
+										{#if post.metadata.tags}
 											<div class="mt-4 flex flex-wrap gap-2">
-												{#each project.metadata.tags as tag (tag)}
+												{#each post.metadata.tags as tag (tag)}
 													<span
 														class="rounded-full border border-[#5be4ff]/20 bg-[#5be4ff]/5 px-3 py-1 text-xs font-medium text-[#5be4ff]"
 													>

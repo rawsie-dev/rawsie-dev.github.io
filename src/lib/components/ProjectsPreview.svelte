@@ -28,7 +28,7 @@
                     {#each featuredProjects as project (project.slug)}
                         <a
                             href={resolve(`/projects/${project.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/[0.03] sm:p-10"
+                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10"
                         >
                             <!-- Header -->
                             <div class="flex items-start justify-between gap-6">

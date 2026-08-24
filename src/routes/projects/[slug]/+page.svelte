@@ -1,8 +1,34 @@
-<script>
+<script lang="ts">
     import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	let { data } = $props();
     import { resolve } from '$app/paths';
+
+	const statusStyles: Record<string, {
+        text: string;
+        border: string;
+        background: string;
+    }> = {
+        Completed: {
+            text: '#86efac',
+            border: '#86efac40',
+            background: '#86efac08'
+        },
+        Ongoing: {
+            text: '#fde68a',
+            border: '#fde68a40',
+            background: '#fde68a08'
+        },
+        Archived: {
+            text: '#71717a',
+            border: '#71717a40',
+            background: '#71717a08'
+        }
+    };
+
+	const status = $derived(
+		statusStyles[data.metadata.status] ?? statusStyles.Archived
+	);
 </script>
 
 <Navbar />
@@ -27,8 +53,7 @@
 		</a>
 
 		<p
-			class="text-sm font-medium uppercase tracking-[0.2em]"
-			style="color: #5be4ff;"
+			class="text-sm font-medium uppercase tracking-[0.2em]" style="color: #5be4ff;"
 		>
 			{new Date(data.metadata.date).toLocaleDateString('en-US', {
 				year: 'numeric',
@@ -37,11 +62,26 @@
 			})}
 		</p>
 
-		<h1
-			class="mt-4 text-4xl font-bold tracking-tight text-[#f5f5fa] sm:text-5xl"
-		>
-			{data.metadata.title}
-		</h1>
+		<div class="mt-4 flex flex-wrap items-center gap-4">
+			<h1
+				class="text-4xl font-bold tracking-tight text-[#f5f5fa] sm:text-5xl" style="color: {status.text};"
+			>
+				{data.metadata.title}
+			</h1>
+
+			{#if data.metadata.status}
+				<span
+					class="shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium"
+					style="
+						color: {status.text};
+						border-color: {status.border};
+						background-color: {status.background};
+					"
+				>
+					{data.metadata.status}
+				</span>
+			{/if}
+		</div>
 
 		<p class="mt-5 text-lg leading-relaxed text-[#a1a1aa]">
 			{data.metadata.description}
