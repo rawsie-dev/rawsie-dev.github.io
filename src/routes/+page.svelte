@@ -2,6 +2,11 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import BlogPreview from '$lib/components/BlogPreview.svelte';
+
+	let { data } = $props();
+
+	// import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -16,6 +21,7 @@
 	<Navbar />
 	<main>
 		<Hero />
+		<BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
 	</main>
 
 </div>

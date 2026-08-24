@@ -47,11 +47,11 @@
 </nav>
 
 <style>
-	.font-fredoka {
+	/* .font-fredoka {
         font-family: 'Fredoka', sans-serif;
         font-weight: 700;
 		font-size: 28px;
-    }
+    } */
 
 	nav {
 		position: fixed;
