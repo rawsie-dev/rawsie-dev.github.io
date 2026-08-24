@@ -1,38 +1,13 @@
 <script>
-	let mouseX = $state(50);
-	let mouseY = $state(50);
-
-    let gradientX = $state(50);
-
-	/** @param {MouseEvent} event */
-    function handleMouseMove(event) {
-		mouseX = (event.clientX / window.innerWidth) * 100;
-		mouseY = (event.clientY / window.innerHeight) * 100;
-
-        gradientX = mouseX;
-	}
 </script>
 
-<section
-	class="hero"
-	onmousemove={handleMouseMove}
-	role="presentation"
->
-	<div
-		class="glow cyan"
-		style={`left: ${mouseX * 0.25}%; top: ${mouseY * 0.25}%;`}
-	></div>
-
-	<div
-		class="glow pink"
-		style={`right: ${(100 - mouseX) * 0.2}%; bottom: ${(100 - mouseY) * 0.2}%;`}
-	></div>
-
+<section class="hero" role="presentation">
+	<div class="glow cyan"></div>
+	<div class="glow pink"></div>
 	<div class="hero-content">
 		<p class="eyebrow">HELLO, I'M</p>
-
 		<h1>RAWSIE</h1>
-
+		
 		<div class="line"></div>
 
 		<p class="tagline">
