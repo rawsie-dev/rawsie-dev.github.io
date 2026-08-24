@@ -8,7 +8,7 @@
 <Navbar />
 
 <svelte:head>
-	<title>{data.metadata.title} — Rawsie</title>
+	<title>{data.metadata.title} &mdash; Rawsie</title>
 
 	<meta
 		name="description"
@@ -16,7 +16,7 @@
 	/>
 </svelte:head>
 
-<article class="mx-auto max-w-3xl px-6 py-20">
+<article class="mx-auto max-w-5xl px-6 py-20">
 	<!-- Header -->
 	<header class="mb-12">
 		<a

@@ -15,9 +15,33 @@ import { error } from '@sveltejs/kit';
  * }} PostModule
  */
 
+/**
+ * @typedef {{
+ *   title: string;
+ *   date: string;
+ *   description: string;
+ *   status: string;
+ *   authors: string[];
+ *   tags?: string[];
+ *   links?: { name: string; url: string }[];
+ *   featured?: boolean;
+ *   hidden?: boolean;
+ *   summary?: string;
+ * }} ProjectsMetadata
+ *
+ * @typedef {{
+ *   metadata: ProjectsMetadata;
+ * }} ProjectsModule
+ */
+
 /** @type {Record<string, PostModule>} */
 const posts = import.meta.glob('/src/lib/content/blog/*.md', {
 	eager: true
+});
+
+/** @type {Record<string, ProjectsModule>} */
+const projects = import.meta.glob('/src/lib/content/projects/*.md', {
+    eager: true
 });
 
 export function load() {
@@ -42,10 +66,38 @@ export function load() {
 			new Date(a.metadata.date).getTime()
 	);
 
+	const projectEntries = Object.entries(projects).map(([path, project]) => {
+			const slug = path.split('/').pop()?.replace('.md', '');
+	
+			if (!slug) {
+				throw error(500, 'Invalid projects filename');
+			}
+	
+			return {
+				slug,
+				metadata: project.metadata
+			};
+		})
+		
+		// Remove hidden projects
+		.filter((project) => !project.metadata.hidden);
+		
+	
+		projectEntries.sort(
+			(a, b) =>
+				new Date(b.metadata.date).getTime() -
+				new Date(a.metadata.date).getTime()
+		);
+
 	return {
 		featuredPosts: postEntries.filter(
 			(post) => post.metadata.featured
 		),
-		recentPosts: postEntries.slice(0, 3)
+		recentPosts: postEntries.slice(0, 3),
+
+		 // Featured projects
+        featuredProjects: projectEntries.filter(
+            (project) => project.metadata.featured
+        )
 	};
 }

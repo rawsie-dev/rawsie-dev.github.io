@@ -65,7 +65,7 @@
         {/if}
         <!-- Normal Posts -->
         {#if recentPosts.length > 0}
-            <section class="mx-auto max-w-6xl py-20">
+            <section class="mx-auto max-w-6xl">
                 <div class="mb-8 flex items-center gap-4">
                     <span class="text-sm font-medium text-[#5be4ff]">
                         LATEST POSTS
@@ -115,16 +115,15 @@
                         </a>
                     {/each}
                 </div>
-
-                <div class="mt-8 text-center">
-                    <a
-                        href={resolve("/blog")}
-                        class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5fa]"
-                    >
-                        View all posts →
-                    </a>
-                </div>
             </section>
         {/if}
+        <div class="mt-8 text-center">
+            <a
+                href={resolve("/blog")}
+                class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5fa]"
+            >
+                View all posts →
+            </a>
+        </div>
     </section>
 </main>

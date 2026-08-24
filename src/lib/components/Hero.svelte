@@ -20,7 +20,7 @@
 		</p>
 
 		<div class="actions">
-			<a href="#work" class="primary">View my work <span>↗</span></a>
+			<a href="#projects" class="primary">View my projects</a>
 			<a href={resolve('/about')} class="secondary">About me</a>
 		</div>
 	</div>

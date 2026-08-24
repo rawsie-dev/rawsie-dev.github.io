@@ -9,7 +9,7 @@
 <Navbar />
 
 <svelte:head>
-	<title>Blog — Rawsie</title>
+	<title>Blog &mdash; Rawsie</title>
 	<meta
 		name="description"
 		content="A place for random thoughts about whatever happens to interest me and I find worth sharing."
@@ -17,7 +17,7 @@
 </svelte:head>
 <PageHeader title="Blog" description="A place for random thoughts about whatever happens to interest me and I find worth sharing."/>
 <main>
-    <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-6xl px-6 py-10">
 
 		<!-- Featured Posts -->
 		{#if data.featuredPosts.length > 0}

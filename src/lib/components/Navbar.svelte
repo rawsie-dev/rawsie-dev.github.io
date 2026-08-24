@@ -12,7 +12,7 @@
 
 	const links = [
 		{ name: 'About', href: '/about' },
-		// { name: 'Work', href: '/work' },
+		{ name: 'Project', href: '/projects' },
 		// { name: 'Research', href: '/research' },
         { name: 'Blog', href: '/blog' },
 		// { name: 'Contact', href: '/contact' }

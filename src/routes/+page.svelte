@@ -3,6 +3,7 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import BlogPreview from '$lib/components/BlogPreview.svelte';
+	import ProjectsPreview from '$lib/components/ProjectsPreview.svelte';
 
 	let { data } = $props();
 
@@ -22,6 +23,7 @@
 	<main>
 		<Hero />
 		<BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
+		<ProjectsPreview featuredProjects={data.featuredProjects} />
 	</main>
 
 </div>

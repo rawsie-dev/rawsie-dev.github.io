@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>About — Rawsie</title>
+	<title>About &mdash; Rawsie</title>
 	<meta
 		name="description"
 		content="Learn more about Rawsie, their interests, background, and things they build."
