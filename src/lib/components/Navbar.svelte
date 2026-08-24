@@ -14,7 +14,7 @@
 		{ name: 'About', href: '/about' },
 		// { name: 'Work', href: '/work' },
 		// { name: 'Research', href: '/research' },
-        // { name: 'Blog', href: '/blog' },
+        { name: 'Blog', href: '/blog' },
 		// { name: 'Contact', href: '/contact' }
 	] as const;
 

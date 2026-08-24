@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 </script>
 
 <section class="hero" role="presentation">
@@ -7,7 +8,7 @@
 	<div class="hero-content">
 		<p class="eyebrow">HELLO, I'M</p>
 		<h1>RAWSIE</h1>
-		
+
 		<div class="line"></div>
 
 		<p class="tagline">
@@ -20,7 +21,7 @@
 
 		<div class="actions">
 			<a href="#work" class="primary">View my work <span>↗</span></a>
-			<a href="#about" class="secondary">About me</a>
+			<a href={resolve('/about')} class="secondary">About me</a>
 		</div>
 	</div>
 
@@ -71,7 +72,7 @@
 	.eyebrow {
 		margin: 0 0 18px;
 
-		font-size: 13px;
+		font-size: 18px;
 		letter-spacing: 0.25em;
 		color: #a7a7b5;
 	}

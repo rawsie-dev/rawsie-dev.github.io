@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="text">
-                <p class="lead">
+                <p class="lead font-bold">
                     Heya! I'm <span class="cyan-text">Rawsie</span>
                 </p>
                 <br />
@@ -188,6 +188,7 @@
 
 		font-size: 27px;
 		line-height: 1.45;
+
 	}
 
 	.text > p {

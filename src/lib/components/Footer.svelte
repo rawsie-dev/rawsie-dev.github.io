@@ -1,13 +1,13 @@
 <footer id="contact">
 	<div class="container">
-		<div class="big">
+		<!-- <div class="big">
 			Let's build
 			<span>something.</span>
 		</div>
 
 		<a class="email" href="mailto:me@rawsie.dev">
 			me@rawsie.dev ↗
-		</a>
+		</a> -->
 
 		<div class="bottom">
 			<div>
