@@ -22,7 +22,9 @@
 	<Navbar />
 	<main>
 		<Hero />
+		<div class="my-20 h-px bg-[#27272a]"></div>
 		<BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
+		<div class="my-20 h-px bg-[#27272a]"></div>
 		<ProjectsPreview featuredProjects={data.featuredProjects} />
 	</main>
 

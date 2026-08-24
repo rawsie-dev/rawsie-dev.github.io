@@ -9,7 +9,7 @@
 		<p class="eyebrow">HELLO, I'M</p>
 		<h1>RAWSIE</h1>
 
-		<div class="line"></div>
+		<div class="rainbow-line"></div>
 
 		<p class="tagline">
 			I build things with
@@ -93,36 +93,7 @@
 			0 0 120px rgba(255, 205, 254, 0.05);
 	}
 
-	.line {
-        width: 500px;
-        height: 2px;
 
-        margin: 38px auto 28px;
-
-        background: repeating-linear-gradient(
-            90deg,
-            #5be4ff 0px,
-            #00a8c9 50px,
-            #ffcdfe 100px,
-            #fcffa8 150px,
-            #cdffd9 200px,
-            #5be4ff 250px
-        );
-
-        background-size: 500px 100%;
-
-        animation: gradient-shift 4s linear infinite;
-    }
-
-    @keyframes gradient-shift {
-        from {
-            background-position: 0 0;
-        }
-
-        to {
-            background-position: -500px 0;
-        }
-    }
 
 	.tagline {
 		margin: auto;
