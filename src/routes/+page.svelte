@@ -15,7 +15,7 @@
 	<title>Rawsie</title>
 	<meta
 		name="description"
-		content="Rawsie's personal website — projects, research, blogs and sometimes random things."
+		content="Rawsie's personal website, including projects, researches, blogs, random thoughts, contact info and more."
 	/>
 </svelte:head>
 

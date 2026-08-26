@@ -9,15 +9,15 @@
 	<title>About &mdash; Rawsie</title>
 	<meta
 		name="description"
-		content="Learn more about Rawsie, their interests, background, and things they build."
+		content="Learn more about me, my interest, background and the things I build."
 	/>
 </svelte:head>
 
 <Navbar />
-<PageHeader title="About Me" description="Learn more about Rawsie, their interests, background, and things they build." />
+<PageHeader title="About Me" description="Learn more about me, my interest, background and the things I build." />
 <main>
 	<section class="about">
-		<div class="container">
+		<div class="about-container">
 			<div class="photo">
                 <Logo class="text-[#5be4ff]" />
 				<div class="orb cyan"></div>
@@ -30,36 +30,43 @@
                 </p>
                 <br />
                 <p>
-                    I'm a student, researcher, and builder who likes understanding how things work, and then trying to make them better.
+					I'm a student, researcher, and occasional music artist who enjoys understanding how things work, finding ways to improve them, and creating things that reflect who I am.
                 </p>
                 <br />
                 <p>
-                    I am interested in <span class="pink-text">AI research</span> and <span class="pink-text">software development</span>. 
-                    I enjoy building things that turn ideas into products that I or other people can actually use. 
+                    I am interested in <span class="pink-text">AI research</span>, <span class="pink-text">software development</span> and <span class="pink-text">creative music work</span> &mdash; a combination you would not expect at first.
+                </p>
+                <br />
+                <p>
+					I enjoy building things that turn ideas into products that I or other people can actually use. I love seeing some kind of materialisation of my work into something tangible.
                 </p>
                 <br />
 				<p>
-					Outside of research, I like building small websites, games, tools, and other things that give me an excuse to learn something <span class="cyan-text">new</span>.
+					Outside of research, I like building small websites, games, tools, and other things that give me an excuse to learn something <span class="cyan-text">new</span>. I also occasionally dabble in some music composition just because I feel like it.
 				</p>
 
-				<div class="facts">
-                    <div>
-						<span>01</span>
-						<h3>AI Research</h3>
-						<p>Exploring how neural networks learn.</p>
-					</div>
+				
+			</div>
+			
+		</div>
+		<div class="facts-container">
+			<div class="facts">
+				<div>
+					<span>01</span>
+					<h3>AI Research</h3>
+					<p>Exploring how neural networks learn.</p>
+				</div>
 
-					<div>
-						<span>02</span>
-						<h3>Software Development</h3>
-						<p>Learning, experimenting, and building practical products.</p>
-					</div>
+				<div>
+					<span>02</span>
+					<h3>Software Development</h3>
+					<p>Learning, experimenting, and building practical products.</p>
+				</div>
 
-					<div>
-						<span>03</span>
-						<h3>Creative Work</h3>
-						<p>Making things that feel like mine, including some music composition.</p>
-					</div>
+				<div>
+					<span>03</span>
+					<h3>Creative Work</h3>
+					<p>Making things that feel like mine, including some music composition.</p>
 				</div>
 			</div>
 		</div>
@@ -132,10 +139,13 @@
 		background: #0b0b12;
 	}
 
-	.container {
+	.about-container,
+	.facts-container {
 		width: min(1100px, calc(100% - 40px));
 		margin: auto;
+	}
 
+	.about-container {
 		display: grid;
 		grid-template-columns: 0.8fr 1.2fr;
 		gap: 100px;
@@ -143,7 +153,6 @@
 
 	.photo {
 		position: relative;
-
 		aspect-ratio: 1;
 
 		display: flex;
@@ -151,7 +160,7 @@
 		justify-content: center;
 
 		overflow: hidden;
-        isolation: isolate;
+		isolation: isolate;
 
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 24px;
@@ -159,28 +168,40 @@
 		background: #0b0b12;
 	}
 
+	.photo :global(svg) {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+
 	.orb {
-        position: absolute;
+		position: absolute;
 
-        width: 280px;
-        height: 280px;
+		width: 280px;
+		height: 280px;
 
-        border-radius: 50%;
-        filter: blur(50px);
-        z-index: 0;
-    }
+		border-radius: 50%;
+		filter: blur(50px);
+		z-index: 0;
+	}
 
-    .orb.cyan {
-        top: -40px;
-        left: -40px;
-        background: rgba(91, 228, 255, 0.15);
-    }
+	.orb.cyan {
+		top: -40px;
+		left: -40px;
+		background: rgba(91, 228, 255, 0.15);
+	}
 
-    .orb.pink {
-        right: -40px;
-        bottom: -40px;
-        background: rgba(255, 205, 254, 0.15);
-    }
+	.orb.pink {
+		right: -40px;
+		bottom: -40px;
+		background: rgba(255, 205, 254, 0.15);
+	}
+
+	.text {
+		position: relative;
+		z-index: 1;
+	}
 
 	.text .lead {
 		margin-top: 0;
@@ -189,7 +210,6 @@
 
 		font-size: 27px;
 		line-height: 1.45;
-
 	}
 
 	.text > p {
@@ -226,14 +246,20 @@
 
 	.facts p {
 		margin: 0;
+
 		color: #686875;
 		font-size: 12px;
 		line-height: 1.5;
 	}
 
 	.timeline {
-		padding: 0px 0;
+		padding: 0;
 		background: #0b0b12;
+	}
+
+	.container {
+		width: min(1100px, calc(100% - 40px));
+		margin: auto;
 	}
 
 	.section-label {
@@ -278,13 +304,51 @@
 	}
 
 	@media (max-width: 750px) {
-		.container {
-			grid-template-columns: 1fr;
-			gap: 50px;
+		.about {
+			padding: 60px 0 100px;
+		}
+
+		.about-container {
+			position: relative;
+			display: block;
+			min-height: 700px;
+		}
+
+		.photo {
+			position: absolute;
+			inset: 0;
+
+			width: 100%;
+			height: 100%;
+			aspect-ratio: auto;
+
+			border: none;
+			border-radius: 0;
+
+			opacity: 0.16;
+			pointer-events: none;
+		}
+
+		.photo :global(svg) {
+			width: 55%;
+			height: 55%;
+		}
+
+		.text {
+			padding: 30px 0;
 		}
 
 		.facts {
 			grid-template-columns: 1fr;
+		}
+
+		.container {
+			width: min(1100px, calc(100% - 40px));
+		}
+
+		.item {
+			grid-template-columns: 60px 1fr;
+			gap: 20px;
 		}
 	}
 </style>
