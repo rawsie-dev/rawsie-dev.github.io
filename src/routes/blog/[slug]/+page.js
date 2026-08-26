@@ -1,3 +1,4 @@
+export const prerender = false; // remove this when you add a blog post
 import { error } from '@sveltejs/kit';
 
 /**
