@@ -3,6 +3,7 @@
 	import Logo from '$lib/components/Logo.svelte';
 
 	let scrolled = $state(false);
+	let mobileOpen = $state(false);
 
 	if (typeof window !== 'undefined') {
 		window.addEventListener('scroll', () => {
@@ -43,7 +44,33 @@
 			<span class="dot"></span>
 			<span>building</span>
 		</div>
-	</div>
+
+		<button
+            class:open={mobileOpen}
+            class="menu-button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
+            onclick={() => mobileOpen = !mobileOpen}
+        >
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Mobile navigation -->
+    {#if mobileOpen}
+        <div class="mobile-menu">
+            {#each links as link (link.href)}
+                <a
+                    href={resolve(link.href)}
+                    class:active={page.url.pathname.startsWith(link.href)}
+                    onclick={() => mobileOpen = false}
+                >
+                    {link.name}
+                </a>
+            {/each}
+        </div>
+    {/if}
 </nav>
 
 <style>
@@ -143,13 +170,99 @@
 		box-shadow: 0 0 10px rgba(91, 228, 255, 0.7);
 	}
 
-	@media (max-width: 700px) {
-		.links {
-			display: none;
-		}
+	.menu-button {
+        display: none;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        margin-left: 4px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+    }
 
-		.status {
-			margin-left: auto;
-		}
+    .menu-button span {
+        display: block;
+        width: 21px;
+        height: 1.5px;
+        border-radius: 2px;
+        background: white;
+        transition:
+            transform 0.25s ease,
+            opacity 0.2s ease;
+    }
+
+	.menu-button.open span:first-child {
+        transform: translateY(3.75px) rotate(45deg);
+    }
+
+    .menu-button.open span:last-child {
+        transform: translateY(-3.75px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+	@media (max-width: 700px) {
+		nav.scrolled {
+            background: rgba(11, 11, 18, 0.82);
+        }
+
+        .nav-inner {
+            width: calc(100% - 32px);
+            height: 64px;
+            gap: 0;
+        }
+
+        .links {
+            display: none;
+        }
+
+        .status {
+            margin-left: auto;
+            margin-right: 12px;
+        }
+
+        .menu-button {
+            display: flex;
+        }
+
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 16px 16px;
+            background: rgba(11, 11, 18, 0.92);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu a {
+            position: relative;
+            padding: 13px 4px;
+            color: #888895;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            color: white;
+        }
+
+        .mobile-menu a.active::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            bottom: 8px;
+            width: 20px;
+            height: 1px;
+            background: #5be4ff;
+        }
 	}
 </style>
