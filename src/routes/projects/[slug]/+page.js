@@ -1,4 +1,3 @@
-export const prerender = false; // remove this when you add a project post
 import { error } from '@sveltejs/kit';
 
 /**

@@ -10,6 +10,10 @@ export default defineConfig({
 		sveltekit({
 			extensions: ['.svelte', '.md'],
 
+			prerender: {
+				handleUnseenRoutes: 'ignore'
+			},
+
 			preprocess: [
 				mdsvex({
 					extensions: ['.md']
