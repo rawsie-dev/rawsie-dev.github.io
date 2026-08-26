@@ -6,6 +6,7 @@ tags:
   - Personal
   - Blog
 featured: true
+hidden: true
 ---
 
 # This is Blog 2

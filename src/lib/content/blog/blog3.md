@@ -7,6 +7,7 @@ tags:
   - Blog
   - Important
 featured: false
+hidden: true
 ---
 
 # This is Blog 3

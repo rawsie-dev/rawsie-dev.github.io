@@ -99,6 +99,14 @@
         {/if}
 
 
+        {#if featuredResearch.length === 0}
+            <div class="py-20 text-center">
+                <p class="text-[#a1a1aa]">
+                    No featured research yet.
+                </p>
+            </div>
+        {/if}
+
         <div class="mt-8 text-center">
             <a
                 href={resolve("/research")}

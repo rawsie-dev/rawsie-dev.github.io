@@ -17,6 +17,7 @@ links:
   - name: Demo
     url: https://example.com
 featured: true
+hidden: true
 summary: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim nunc in egestas pellentesque. Vestibulum at ipsum lobortis, ultricies velit a, finibus dui. Duis volutpat iaculis laoreet. Duis placerat finibus dolor, et tincidunt velit ornare in. Pellentesque nibh neque, molestie sed felis quis, suscipit semper augue. Quisque porta eget leo in porttitor. 
   

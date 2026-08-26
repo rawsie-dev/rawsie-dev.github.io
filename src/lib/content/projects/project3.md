@@ -14,7 +14,7 @@ links:
     url: https://github.com/rawsiedev/project
   - name: Demo
     url: https://example.com
-
+hidden: true
 ---
 
 

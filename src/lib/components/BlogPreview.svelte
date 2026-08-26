@@ -117,6 +117,15 @@
                 </div>
             </section>
         {/if}
+
+        {#if featuredPosts.length === 0 && recentPosts.length === 0}
+            <div class="py-20 text-center">
+                <p class="text-[#a1a1aa]">
+                    No posts yet.
+                </p>
+            </div>
+        {/if}
+
         <div class="mt-8 text-center">
             <a
                 href={resolve("/blog")}

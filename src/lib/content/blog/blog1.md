@@ -7,6 +7,7 @@ tags:
   - Blog
   - Hobbies
 featured: false
+hidden: true
 ---
 
 # This is Blog 1
