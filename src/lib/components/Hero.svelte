@@ -23,8 +23,8 @@
 	class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b0b12]"
 	role="presentation"
 >
-	<div class="glow cyan"></div>
-	<div class="glow pink"></div>
+	<!-- <div class="glow cyan"></div>
+	<div class="glow pink"></div> -->
 
 	<div class="relative z-2 w-[min(1000px,calc(100%-40px))] text-center">
 		<p class="mb-4.5 text-[18px] tracking-[0.25em] text-[#a7a7b5]">
@@ -95,7 +95,7 @@
 </section>
 
 <style>
-	.glow {
+	/* .glow {
 		position: absolute;
 		width: 900px;
 		height: 900px;
@@ -121,7 +121,7 @@
 			rgba(255, 205, 254, 0.01) 55%,
 			transparent 75%
 		);
-	}
+	} */
 	
 	.filled-letters path { stroke: none; }
 

@@ -19,7 +19,13 @@
 	/>
 </svelte:head>
 
-<div class="site">
+<div class="site relative">
+
+	<div class="pointer-events-none absolute inset-0 overflow-hidden z-10">
+		<div class="glow cyan absolute left-1/2 top-[510px] -translate-x-1/2 -translate-y-1/2"></div>
+		<div class="glow pink absolute left-1/2 top-[620px] -translate-x-1/2 -translate-y-1/2"></div>
+	</div>
+
 	<Navbar />
 	<main>
 		<Hero />
@@ -35,3 +41,34 @@
 </div>
 
 <Footer />
+
+<style>
+    .glow {
+		position: absolute;
+		width: 900px;
+		height: 900px;
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	.glow.cyan {
+		background: radial-gradient(
+			circle,
+			rgba(91, 228, 255, 0.07) 0%,
+			rgba(91, 228, 255, 0.035) 30%,
+			rgba(91, 228, 255, 0.01) 55%,
+			transparent 75%
+		);
+	}
+
+	.glow.pink {
+		background: radial-gradient(
+			circle,
+			rgba(255, 205, 254, 0.06) 0%,
+			rgba(255, 205, 254, 0.03) 30%,
+			rgba(255, 205, 254, 0.01) 55%,
+			transparent 75%
+		);
+	}
+
+</style>
