@@ -16,11 +16,55 @@
 			HELLO, I'M
 		</p>
 
-		<h1
-			class="rawsie-title m-0 text-[clamp(80px,17vw,210px)] font-extrabold leading-[0.85] tracking-[-0.07em] text-white [text-shadow:0_0_80px_rgba(91,228,255,0.08),0_0_120px_rgba(255,205,254,0.05)]"
-		>
-			RAWSIE
-		</h1>
+		<div class="rawsie-wrap">
+	<svg
+		class="rawsie-svg"
+		viewBox="0 0 900 220"
+		preserveAspectRatio="xMidYMid meet"
+		aria-label="RAWSIE"
+		role="img"
+	>
+		<defs>
+			<linearGradient id="rawsie-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+				<stop offset="0%" stop-color="#5be4ff" />
+				<stop offset="35%" stop-color="#ffcdfe" />
+				<stop offset="55%" stop-color="#ffffff" />
+				<stop offset="75%" stop-color="#5be4ff" />
+				<stop offset="100%" stop-color="#ffcdfe" />
+			</linearGradient>
+
+			<filter id="rawsie-glow" x="-50%" y="-50%" width="200%" height="200%">
+				<feGaussianBlur stdDeviation="7" result="blur" />
+				<feMerge>
+					<feMergeNode in="blur" />
+					<feMergeNode in="SourceGraphic" />
+				</feMerge>
+			</filter>
+		</defs>
+
+		<!-- Drawing strokes -->
+		<g transform="translate(23 0)">
+			<g class="rawsie-draw">
+				<text x="80"  y="155">R</text>
+				<text x="215" y="155">A</text>
+				<text x="325" y="155">W</text>
+				<text x="495" y="155">S</text>
+				<text x="611" y="155">I</text>
+				<text x="654" y="155">E</text>
+			</g>
+
+			<!-- Finished lettering -->
+			<g class="rawsie-fill">
+				<text x="80"  y="155">R</text>
+				<text x="215" y="155">A</text>
+				<text x="325" y="155">W</text>
+				<text x="495" y="155">S</text>
+				<text x="611" y="155">I</text>
+				<text x="654" y="155">E</text>
+			</g>
+		</g>
+	</svg>
+</div>
 
 		<div class="rainbow-line"></div>
 
@@ -116,4 +160,163 @@
 			background-position: 300% 50%;
 		}
 		}
+
+	.rawsie-draw text {
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: 900;
+		font-size: 185px;
+
+		fill: transparent;
+		stroke: #5be4ff;
+		stroke-width: 2.5;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+		filter: url(#rawsie-glow);
+
+		/*
+		* Huge dash length ensures the entire glyph
+		* is available to be revealed.
+		*/
+		stroke-dasharray: 5000;
+		stroke-dashoffset: 5000;
+
+		/*
+		* VERY slow drawing.
+		*/
+		animation:
+			rawsie-letter-write 5s linear forwards, /* 5 */
+			rawsie-pen-glow 5s ease-in-out forwards;
+	}
+
+
+	/* =========================================
+	LETTER START TIMES
+	========================================= */
+
+	/* R */
+	.rawsie-draw text:nth-child(1) {
+		animation-delay: 3s, 3s;
+	}
+
+	/* A — 2.2 seconds of overlap with R */
+	.rawsie-draw text:nth-child(2) {
+		animation-delay: 3.3s, 3.3s;
+	}
+
+	/* W — overlaps A and R */
+	.rawsie-draw text:nth-child(3) {
+		animation-delay: 3.6s, 3.6s;
+	}
+
+	/* S */
+	.rawsie-draw text:nth-child(4) {
+		animation-delay: 4.3s, 4.3s;
+	}
+
+	/* I */
+	.rawsie-draw text:nth-child(5) {
+		animation-delay: 5.4s, 5.4s;
+	}
+
+	/* E */
+	.rawsie-draw text:nth-child(6) {
+		animation-delay: 4.7s, 4.7s;
+	}
+
+
+	/* =========================================
+	FINISHED LETTERS
+	========================================= */
+
+	.rawsie-fill text {
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 900;
+		font-size: 185px;
+
+		fill: url(#rawsie-gradient);
+		fill-opacity: 0;
+
+		stroke: transparent;
+
+		animation: rawsie-fill-in 0.6s ease forwards;
+	}
+
+	/*
+	* Each fill appears right as its
+	* corresponding 3-second drawing finishes.
+	*/
+
+	.rawsie-fill text:nth-child(1) {
+		animation-delay: 4.3s;
+	}
+
+	.rawsie-fill text:nth-child(2) {
+		animation-delay: 4.5s;
+	}
+
+	.rawsie-fill text:nth-child(3) {
+		animation-delay: 5.8s;
+	}
+
+	.rawsie-fill text:nth-child(4) {
+		animation-delay: 6.0s;
+	}
+
+	.rawsie-fill text:nth-child(5) {
+		animation-delay: 6.2s;
+	}
+
+	.rawsie-fill text:nth-child(6) {
+		animation-delay: 6.4s;
+	}
+
+
+	/* =========================================
+	DRAW ANIMATION
+	========================================= */
+
+	@keyframes rawsie-letter-write {
+		0% {
+			stroke-dashoffset: 5000;
+		}
+
+		100% {
+			stroke-dashoffset: 0;
+		}
+	}
+
+
+	@keyframes rawsie-fill-in {
+		0% {
+			fill-opacity: 0;
+		}
+
+		100% {
+			fill-opacity: 1;
+		}
+	}
+
+
+	@keyframes rawsie-pen-glow {
+		0% {
+			filter:
+				url(#rawsie-glow)
+				drop-shadow(0 0 5px rgba(91, 228, 255, 0.2));
+		}
+
+		50% {
+			filter:
+				url(#rawsie-glow)
+				drop-shadow(0 0 30px rgba(91, 228, 255, 0.8))
+				drop-shadow(0 0 50px rgba(255, 205, 254, 0.5));
+		}
+
+		100% {
+			filter:
+				url(#rawsie-glow)
+				drop-shadow(0 0 30px rgba(91, 228, 255, 0.12))
+				drop-shadow(0 0 50px rgba(255, 205, 254, 0.08));
+		}
+	}
 </style>
