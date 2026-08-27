@@ -1,76 +1,84 @@
-<script>
+<script lang="ts">
 	import { resolve } from '$app/paths';
+
+	function uniformAnimation(node: SVGPathElement) {
+		const length = node.getTotalLength();
+		const speed = 250;
+		
+		const dashLength = length * 0.25; 
+		
+		const gapLength = length / 12;
+		
+		node.style.strokeDasharray = `${dashLength} ${gapLength}`;
+		
+		node.style.setProperty('--path-length', length.toString());
+		
+		const duration = length / speed;
+		node.style.animationDuration = `${duration}s`;
+		
+		node.removeAttribute('pathLength');
+	}
 </script>
 
 <section
 	class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b0b12]"
 	role="presentation"
 >
-	<!-- Background glows -->
 	<div class="glow cyan"></div>
 	<div class="glow pink"></div>
 
-	<!-- Hero content -->
 	<div class="relative z-2 w-[min(1000px,calc(100%-40px))] text-center">
 		<p class="mb-4.5 text-[18px] tracking-[0.25em] text-[#a7a7b5]">
 			HELLO, I'M
 		</p>
 
-		<div class="rawsie-wrap">
-	<svg
-		class="rawsie-svg"
-		viewBox="0 0 900 220"
-		preserveAspectRatio="xMidYMid meet"
-		aria-label="RAWSIE"
-		role="img"
-	>
-		<defs>
-			<linearGradient id="rawsie-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-				<stop offset="0%" stop-color="#5be4ff" />
-				<stop offset="35%" stop-color="#ffcdfe" />
-				<stop offset="55%" stop-color="#ffffff" />
-				<stop offset="75%" stop-color="#5be4ff" />
-				<stop offset="100%" stop-color="#ffcdfe" />
-			</linearGradient>
+		<div class="mx-auto mb-8 w-full max-w-200 filter-[drop-shadow(0_0_20px_rgba(91,228,255,0.2))_drop-shadow(0_0_40px_rgba(255,205,254,0.15))]">
+			<svg
+				viewBox="-10 -15 1235 260"
+				class="h-auto w-full overflow-visible"
+				aria-label="RAWSIE"
+			>
+				<!-- The Gradient Definition -->
+				<defs>
+					<linearGradient id="flowing-gradient" x1="0%" y1="0%" x2="200%" y2="0%">
+						<stop offset="0%" stop-color="#5be4ff" />
+						<stop offset="25%" stop-color="#ffcdfe" />
+						<stop offset="50%" stop-color="#5be4ff" />
+						<stop offset="75%" stop-color="#ffcdfe" />
+						<stop offset="100%" stop-color="#5be4ff" />
+						
+						<animate attributeName="x1" values="0%;-100%" dur="3s" repeatCount="indefinite" />
+						<animate attributeName="x2" values="200%;100%" dur="3s" repeatCount="indefinite" />
+					</linearGradient>
+				</defs>
 
-			<filter id="rawsie-glow" x="-50%" y="-50%" width="200%" height="200%">
-				<feGaussianBlur stdDeviation="7" result="blur" />
-				<feMerge>
-					<feMergeNode in="blur" />
-					<feMergeNode in="SourceGraphic" />
-				</feMerge>
-			</filter>
-		</defs>
+				<!-- LAYER 1: The solid fill -->
+				<g class="filled-letters" fill="#0b0b12" fill-rule="evenodd">
+					<path d="M 49.979791,101.62645 V 37.808957 h 54.609999 q 17.145,0 25.7175,7.62 8.5725,7.3025 8.5725,23.8125 0,17.145 -8.5725,24.765 -8.5725,7.619993 -25.7175,7.619993 z M 0.1322915,-0.92604184 V 225.76895 H 49.979791 v -88.5825 h 49.8475 q 18.732499,0 26.987499,8.255 8.255,8.255 10.795,26.035 1.905,13.6525 2.8575,28.575 0.9525,14.9225 5.08,25.7175 h 49.8475 q -3.4925,-4.7625 -5.3975,-11.43 -1.5875,-6.985 -2.54,-14.605 -0.635,-7.62 -0.9525,-14.9225 -0.3175,-7.3025 -0.635,-12.7 -0.635,-8.5725 -2.54,-17.145 -1.5875,-8.5725 -5.3975,-15.5575 -3.81,-7.3025 -9.8425,-12.3825 -6.0325,-5.3975 -15.24,-7.9375 v -0.635 q 19.05,-7.62 27.305,-22.224993 8.5725,-14.605 8.5725,-34.6075 0,-13.0175 -4.7625,-24.13 -4.445,-11.43 -13.335,-20.0025 -8.5725,-8.5724989 -20.955,-13.3349989 -12.065,-5.07999994 -27.305,-5.07999994 z" />
+					<path d="m 286.58377,138.49073 29.5275,-83.185 h 0.635 l 28.575,83.185 z m 4.7625,-139.06500013 -85.725,226.69500013 h 50.165 l 17.78,-50.4825 h 84.7725 l 17.145,50.4825 h 51.7525 L 342.46377,-0.57427013 Z" />
+					<path d="m 655.46644,225.47416 60.96,-226.6949994 h -48.895 L 630.38394,154.98916 h -0.635 l -38.735,-156.2099994 h -46.6725 l -39.37,154.3049994 h -0.635 L 468.45894,-1.2208394 h -49.8475 l 60.0075,226.6949994 h 50.4825 l 37.7825,-154.304999 h 0.635 l 38.4175,154.304999 z" />
+					<path d="m 772.94331,150.80113 h -48.25997 q -0.3175,20.955 7.61997,36.195 7.9375,15.24 21.2725,25.0825 13.6525,9.8425 31.115,14.2875 17.78,4.7625 36.5125,4.7625 23.1775,0 40.64,-5.3975 17.78,-5.3975 29.52753,-14.9225 12.065,-9.8425 18.0975,-23.1775 6.0325,-13.335 6.0325,-28.8925 0,-19.05 -8.255,-31.115 -7.9375,-12.3825 -19.05,-19.685 -11.11253,-7.3025 -22.54253,-10.477496 -11.1125,-3.4925 -17.4625,-4.7625 -21.2725,-5.3975 -34.6075,-8.89 -13.0175,-3.4925 -20.6375,-6.985 -7.3025,-3.4925 -9.8425,-7.62 -2.54,-4.1275 -2.54,-10.795 0,-7.3025 3.175,-12.065 3.175,-4.7625 7.9375,-7.9375 5.08,-3.175 11.1125,-4.445 6.0325,-1.27 12.065,-1.27 9.2075,0 16.8275,1.5875 7.9375,1.5875 13.97,5.3975 6.0325,3.81 9.525,10.4775 3.81,6.6675 4.445,16.8275 h 48.26003 q 0,-19.685 -7.62,-33.3375 -7.3025,-13.97 -20.00253,-22.86 -12.7,-8.8899997 -29.21,-12.6999997 -16.1925,-4.1275 -33.9725,-4.1275 -15.24,0 -30.48,4.1275 -15.24,4.1275 -27.305,12.6999997 -12.065,8.5725 -19.685,21.59 -7.3025,12.7 -7.3025,30.1625 0,15.5575 5.715,26.67 6.0325,10.794996 15.5575,18.097496 9.525,7.3025 21.59,12.065 12.065,4.445 24.765,7.62 12.3825,3.4925 24.4475,6.35 12.065,2.8575 21.59,6.6675 9.525,3.81 15.24,9.525 6.0325,5.715 6.0325,14.9225 0,8.5725 -4.445,14.2875 -4.445,5.3975 -11.1125,8.5725 -6.6675,3.175 -14.2875,4.445 -7.62,0.9525 -14.2875,0.9525 -9.8425,0 -19.05,-2.2225 -9.2075,-2.54 -16.1925,-7.3025 -6.6675,-5.08 -10.795,-13.0175 -4.1275,-7.9375 -4.1275,-19.3675 z" />
+					<path d="M 945.23058,-0.83388443 V 225.86112 h 49.8475 V -0.83388443 Z" />
+					<path d="M 1038.6123,-0.87654265 V 225.81845 h 172.085 v -41.91 h -122.2375 v -55.5625 h 109.855 V 89.610957 h -109.855 v -48.5775 h 119.6975 V -0.87654265 Z" />
+				</g>
 
-		<!-- Drawing strokes -->
-		<g transform="translate(23 0)">
-			<g class="rawsie-draw">
-				<text x="80"  y="155">R</text>
-				<text x="215" y="155">A</text>
-				<text x="325" y="155">W</text>
-				<text x="495" y="155">S</text>
-				<text x="611" y="155">I</text>
-				<text x="654" y="155">E</text>
-			</g>
-
-			<!-- Finished lettering -->
-			<g class="rawsie-fill">
-				<text x="80"  y="155">R</text>
-				<text x="215" y="155">A</text>
-				<text x="325" y="155">W</text>
-				<text x="495" y="155">S</text>
-				<text x="611" y="155">I</text>
-				<text x="654" y="155">E</text>
-			</g>
-		</g>
-	</svg>
-</div>
+				<!-- LAYER 2: The animated outline -->
+				<g class="animated-outline">
+					<path use:uniformAnimation pathLength="100" d="M 0.1322915,-0.92604184 V 225.76895 H 49.979791 v -88.5825 h 49.8475 q 18.732499,0 26.987499,8.255 8.255,8.255 10.795,26.035 1.905,13.6525 2.8575,28.575 0.9525,14.9225 5.08,25.7175 h 49.8475 q -3.4925,-4.7625 -5.3975,-11.43 -1.5875,-6.985 -2.54,-14.605 -0.635,-7.62 -0.9525,-14.9225 -0.3175,-7.3025 -0.635,-12.7 -0.635,-8.5725 -2.54,-17.145 -1.5875,-8.5725 -5.3975,-15.5575 -3.81,-7.3025 -9.8425,-12.3825 -6.0325,-5.3975 -15.24,-7.9375 v -0.635 q 19.05,-7.62 27.305,-22.224993 8.5725,-14.605 8.5725,-34.6075 0,-13.0175 -4.7625,-24.13 -4.445,-11.43 -13.335,-20.0025 -8.5725,-8.5724989 -20.955,-13.3349989 -12.065,-5.07999994 -27.305,-5.07999994 z" />
+					<path use:uniformAnimation pathLength="100" d="M 49.979791,101.62645 V 37.808957 h 54.609999 q 17.145,0 25.7175,7.62 8.5725,7.3025 8.5725,23.8125 0,17.145 -8.5725,24.765 -8.5725,7.619993 -25.7175,7.619993 z" />
+					<path use:uniformAnimation pathLength="100" d="M 291.34627,-0.57427013 l -85.725,226.69500013 h 50.165 l 17.78,-50.4825 h 84.7725 l 17.145,50.4825 h 51.7525 L 342.46377,-0.57427013 Z" />
+					<path use:uniformAnimation pathLength="100" d="M 286.58377,138.49073 l 29.5275,-83.185 h 0.635 l 28.575,83.185 z" />
+					<path use:uniformAnimation pathLength="100" d="m 655.46644,225.47416 60.96,-226.6949994 h -48.895 L 630.38394,154.98916 h -0.635 l -38.735,-156.2099994 h -46.6725 l -39.37,154.3049994 h -0.635 L 468.45894,-1.2208394 h -49.8475 l 60.0075,226.6949994 h 50.4825 l 37.7825,-154.304999 h 0.635 l 38.4175,154.304999 z" />
+					<path use:uniformAnimation pathLength="100" d="m 772.94331,150.80113 h -48.25997 q -0.3175,20.955 7.61997,36.195 7.9375,15.24 21.2725,25.0825 13.6525,9.8425 31.115,14.2875 17.78,4.7625 36.5125,4.7625 23.1775,0 40.64,-5.3975 17.78,-5.3975 29.52753,-14.9225 12.065,-9.8425 18.0975,-23.1775 6.0325,-13.335 6.0325,-28.8925 0,-19.05 -8.255,-31.115 -7.9375,-12.3825 -19.05,-19.685 -11.11253,-7.3025 -22.54253,-10.477496 -11.1125,-3.4925 -17.4625,-4.7625 -21.2725,-5.3975 -34.6075,-8.89 -13.0175,-3.4925 -20.6375,-6.985 -7.3025,-3.4925 -9.8425,-7.62 -2.54,-4.1275 -2.54,-10.795 0,-7.3025 3.175,-12.065 3.175,-4.7625 7.9375,-7.9375 5.08,-3.175 11.1125,-4.445 6.0325,-1.27 12.065,-1.27 9.2075,0 16.8275,1.5875 7.9375,1.5875 13.97,5.3975 6.0325,3.81 9.525,10.4775 3.81,6.6675 4.445,16.8275 h 48.26003 q 0,-19.685 -7.62,-33.3375 -7.3025,-13.97 -20.00253,-22.86 -12.7,-8.8899997 -29.21,-12.6999997 -16.1925,-4.1275 -33.9725,-4.1275 -15.24,0 -30.48,4.1275 -15.24,4.1275 -27.305,12.6999997 -12.065,8.5725 -19.685,21.59 -7.3025,12.7 -7.3025,30.1625 0,15.5575 5.715,26.67 6.0325,10.794996 15.5575,18.097496 9.525,7.3025 21.59,12.065 12.065,4.445 24.765,7.62 12.3825,3.4925 24.4475,6.35 12.065,2.8575 21.59,6.6675 9.525,3.81 15.24,9.525 6.0325,5.715 6.0325,14.9225 0,8.5725 -4.445,14.2875 -4.445,5.3975 -11.1125,8.5725 -6.6675,3.175 -14.2875,4.445 -7.62,0.9525 -14.2875,0.9525 -9.8425,0 -19.05,-2.2225 -9.2075,-2.54 -16.1925,-7.3025 -6.6675,-5.08 -10.795,-13.0175 -4.1275,-7.9375 -4.1275,-19.3675 z" />
+					<path use:uniformAnimation pathLength="100" d="M 945.23058,-0.83388443 V 225.86112 h 49.8475 V -0.83388443 Z" />
+					<path use:uniformAnimation pathLength="100" d="M 1038.6123,-0.87654265 V 225.81845 h 172.085 v -41.91 h -122.2375 v -55.5625 h 109.855 V 89.610957 h -109.855 v -48.5775 h 119.6975 V -0.87654265 Z" />
+				</g>
+			</svg>
+		</div>
 
 		<div class="rainbow-line"></div>
 
-		<p
-			class="mx-auto max-w-162.5 text-[clamp(20px,3vw,30px)] leading-[1.4] text-[#d0d0d8]"
-		>
+		<p class="mx-auto max-w-162.5 text-[clamp(20px,3vw,30px)] leading-[1.4] text-[#d0d0d8]">
 			I build things with
 			<span class="text-[#5be4ff]">code</span>,
 			<span class="text-[#5be4ff]">AI</span>,
@@ -79,28 +87,14 @@
 		</p>
 
 		<div class="mt-10 flex justify-center gap-3.5 max-[600px]:flex-col max-[600px]:items-center">
-			<a
-				href="#projects"
-				class="rounded-full bg-white px-5 py-3.25 text-[14px] text-[#0b0b12] no-underline transition-transform duration-200 ease-in-out hover:-translate-y-0.5 max-[600px]:w-45 max-[600px]:text-center"
-			>
+			<a href="#projects" class="rounded-full bg-white px-5 py-3.25 text-[14px] text-[#0b0b12] no-underline transition-transform duration-200 ease-in-out hover:-translate-y-0.5 max-[600px]:w-45 max-[600px]:text-center">
 				View my projects
 			</a>
 
-			<a
-				href={resolve('/about')}
-				class="rounded-full border border-white/15 px-5 py-3.25 text-[14px] text-white no-underline transition-[background,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:bg-white/6 max-[600px]:w-45 max-[600px]:text-center"
-			>
+			<a href={resolve('/about')} class="rounded-full border border-white/15 px-5 py-3.25 text-[14px] text-white no-underline transition-[background,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:bg-white/6 max-[600px]:w-45 max-[600px]:text-center">
 				About me
 			</a>
 		</div>
-	</div>
-
-	<!-- Scroll indicator -->
-	<div
-		class="absolute bottom-7.5 flex flex-col items-center gap-2.5 text-[9px] tracking-[0.2em] text-[#686875]"
-	>
-		<span class="h-8.75 w-px bg-linear-to-b from-[#5be4ff] to-transparent"></span>
-		SCROLL TO EXPLORE
 	</div>
 </section>
 
@@ -112,211 +106,28 @@
 		border-radius: 50%;
 		filter: blur(120px);
 		pointer-events: none;
-		transition:
-			left 1s ease,
-			top 1s ease,
-			right 1s ease,
-			bottom 1s ease;
+		transition: left 1s ease, top 1s ease, right 1s ease, bottom 1s ease;
 	}
 
-	.glow.cyan {
-		background: rgba(91, 228, 255, 0.09);
-	}
+	.glow.cyan { background: rgba(91, 228, 255, 0.09); }
+	.glow.pink { background: rgba(255, 205, 254, 0.08); }
+	
+	.filled-letters path { stroke: none; }
 
-	.glow.pink {
-		background: rgba(255, 205, 254, 0.08);
-	}
-
-	.rawsie-title {
-		background: linear-gradient(
-			90deg,
-			#5be4ff,
-			#ffcdfE,
-			#ffffff,
-			#5be4ff,
-			#ffcdfE,
-			#5be4ff
-		);
-		background-size: 300% 100%;
-		background-position: 0% 50%;
-
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-
-		animation: prism-roll 8s linear infinite;
-
-		filter:
-			drop-shadow(0 0 30px rgba(91, 228, 255, 0.12))
-			drop-shadow(0 0 50px rgba(255, 205, 254, 0.08));
-		}
-
-		@keyframes prism-roll {
-		0% {
-			background-position: 0% 50%;
-		}
-
-		100% {
-			background-position: 300% 50%;
-		}
-		}
-
-	.rawsie-draw text {
-		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-weight: 900;
-		font-size: 185px;
-
+	.animated-outline path {
 		fill: transparent;
-		stroke: #5be4ff;
-		stroke-width: 2.5;
+		stroke: url(#flowing-gradient);
+		stroke-width: 4px;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-
-		filter: url(#rawsie-glow);
-
-		/*
-		* Huge dash length ensures the entire glyph
-		* is available to be revealed.
-		*/
-		stroke-dasharray: 5000;
-		stroke-dashoffset: 5000;
-
-		/*
-		* VERY slow drawing.
-		*/
-		animation:
-			rawsie-letter-write 5s linear forwards, /* 5 */
-			rawsie-pen-glow 5s ease-in-out forwards;
+		
+		/* Fallback for SSR before Svelte script calculates exact pixels: 
+		   25 is dash (1/4), 8.33 is gap (1/12) */
+		stroke-dasharray: 25 8.33; 
+		animation: traceLine 4s linear infinite;
 	}
 
-
-	/* =========================================
-	LETTER START TIMES
-	========================================= */
-
-	/* R */
-	.rawsie-draw text:nth-child(1) {
-		animation-delay: 3s, 3s;
-	}
-
-	/* A — 2.2 seconds of overlap with R */
-	.rawsie-draw text:nth-child(2) {
-		animation-delay: 3.3s, 3.3s;
-	}
-
-	/* W — overlaps A and R */
-	.rawsie-draw text:nth-child(3) {
-		animation-delay: 3.6s, 3.6s;
-	}
-
-	/* S */
-	.rawsie-draw text:nth-child(4) {
-		animation-delay: 4.3s, 4.3s;
-	}
-
-	/* I */
-	.rawsie-draw text:nth-child(5) {
-		animation-delay: 5.4s, 5.4s;
-	}
-
-	/* E */
-	.rawsie-draw text:nth-child(6) {
-		animation-delay: 4.7s, 4.7s;
-	}
-
-
-	/* =========================================
-	FINISHED LETTERS
-	========================================= */
-
-	.rawsie-fill text {
-		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 900;
-		font-size: 185px;
-
-		fill: url(#rawsie-gradient);
-		fill-opacity: 0;
-
-		stroke: transparent;
-
-		animation: rawsie-fill-in 0.6s ease forwards;
-	}
-
-	/*
-	* Each fill appears right as its
-	* corresponding 3-second drawing finishes.
-	*/
-
-	.rawsie-fill text:nth-child(1) {
-		animation-delay: 4.3s;
-	}
-
-	.rawsie-fill text:nth-child(2) {
-		animation-delay: 4.5s;
-	}
-
-	.rawsie-fill text:nth-child(3) {
-		animation-delay: 5.8s;
-	}
-
-	.rawsie-fill text:nth-child(4) {
-		animation-delay: 6.0s;
-	}
-
-	.rawsie-fill text:nth-child(5) {
-		animation-delay: 6.2s;
-	}
-
-	.rawsie-fill text:nth-child(6) {
-		animation-delay: 6.4s;
-	}
-
-
-	/* =========================================
-	DRAW ANIMATION
-	========================================= */
-
-	@keyframes rawsie-letter-write {
-		0% {
-			stroke-dashoffset: 5000;
-		}
-
-		100% {
-			stroke-dashoffset: 0;
-		}
-	}
-
-
-	@keyframes rawsie-fill-in {
-		0% {
-			fill-opacity: 0;
-		}
-
-		100% {
-			fill-opacity: 1;
-		}
-	}
-
-
-	@keyframes rawsie-pen-glow {
-		0% {
-			filter:
-				url(#rawsie-glow)
-				drop-shadow(0 0 5px rgba(91, 228, 255, 0.2));
-		}
-
-		50% {
-			filter:
-				url(#rawsie-glow)
-				drop-shadow(0 0 30px rgba(91, 228, 255, 0.8))
-				drop-shadow(0 0 50px rgba(255, 205, 254, 0.5));
-		}
-
-		100% {
-			filter:
-				url(#rawsie-glow)
-				drop-shadow(0 0 30px rgba(91, 228, 255, 0.12))
-				drop-shadow(0 0 50px rgba(255, 205, 254, 0.08));
-		}
+	@keyframes traceLine {
+		100% { stroke-dashoffset: calc(var(--path-length, 100) * -1); }
 	}
 </style>
