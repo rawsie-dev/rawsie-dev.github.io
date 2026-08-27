@@ -22,8 +22,8 @@
 <div class="site relative">
 
 	<div class="pointer-events-none absolute inset-0 overflow-hidden z-10">
-		<div class="glow cyan absolute left-1/2 top-[510px] -translate-x-1/2 -translate-y-1/2"></div>
-		<div class="glow pink absolute left-1/2 top-[620px] -translate-x-1/2 -translate-y-1/2"></div>
+		<div class="glow cyan absolute left-1/2 top-127.5 -translate-x-1/2 -translate-y-1/2"></div>
+		<div class="glow pink absolute left-1/2 top-155 -translate-x-1/2 -translate-y-1/2"></div>
 	</div>
 
 	<Navbar />
