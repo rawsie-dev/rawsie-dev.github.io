@@ -17,7 +17,7 @@
 		</p>
 
 		<h1
-			class="m-0 text-[clamp(80px,17vw,210px)] font-extrabold leading-[0.85] tracking-[-0.07em] text-white [text-shadow:0_0_80px_rgba(91,228,255,0.08),0_0_120px_rgba(255,205,254,0.05)]"
+			class="rawsie-title m-0 text-[clamp(80px,17vw,210px)] font-extrabold leading-[0.85] tracking-[-0.07em] text-white [text-shadow:0_0_80px_rgba(91,228,255,0.08),0_0_120px_rgba(255,205,254,0.05)]"
 		>
 			RAWSIE
 		</h1>
@@ -82,4 +82,38 @@
 	.glow.pink {
 		background: rgba(255, 205, 254, 0.08);
 	}
+
+	.rawsie-title {
+		background: linear-gradient(
+			90deg,
+			#5be4ff,
+			#ffcdfE,
+			#ffffff,
+			#5be4ff,
+			#ffcdfE,
+			#5be4ff
+		);
+		background-size: 300% 100%;
+		background-position: 0% 50%;
+
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		animation: prism-roll 8s linear infinite;
+
+		filter:
+			drop-shadow(0 0 30px rgba(91, 228, 255, 0.12))
+			drop-shadow(0 0 50px rgba(255, 205, 254, 0.08));
+		}
+
+		@keyframes prism-roll {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		100% {
+			background-position: 300% 50%;
+		}
+		}
 </style>
