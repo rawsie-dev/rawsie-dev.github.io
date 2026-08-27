@@ -5,7 +5,7 @@
 </script>
 
 <main>
-    <section class="mx-auto max-w-6xl px-6 py-20" id="research">
+    <section class="mx-auto max-w-6xl px-6" id="research">
         <div class="mb-10">
             <p class="text-sm font-medium uppercase tracking-widest text-[#5be4ff]">
                 Questions I've explored and investigated.

@@ -29,6 +29,7 @@
 		<ProjectsPreview featuredProjects={data.featuredProjects} />
 		<div class="my-20 h-px bg-[#27272a]"></div>
 		<ResearchPreview featuredResearch={data.featuredResearch} />
+		<div class="my-10 h-px"></div>
 	</main>
 
 </div>

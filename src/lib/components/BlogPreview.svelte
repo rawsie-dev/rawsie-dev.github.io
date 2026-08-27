@@ -5,7 +5,7 @@
 </script>
 
 <main>
-    <section class="mx-auto max-w-6xl px-6 py-20">
+    <section class="mx-auto max-w-6xl px-6">
         <div class="mb-10">
             <p class="text-sm font-medium uppercase tracking-widest text-[#5be4ff]">
                 A place for random thoughts.
