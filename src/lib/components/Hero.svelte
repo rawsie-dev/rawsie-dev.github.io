@@ -1,23 +1,22 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+    import { resolve } from '$app/paths';
 
-	function uniformAnimation(node: SVGPathElement) {
-		const length = node.getTotalLength();
-		const speed = 250;
-		
-		const dashLength = length * 0.25; 
-		
-		const gapLength = length / 12;
-		
-		node.style.strokeDasharray = `${dashLength} ${gapLength}`;
-		
-		node.style.setProperty('--path-length', length.toString());
-		
-		const duration = length / speed;
-		node.style.animationDuration = `${duration}s`;
-		
-		node.removeAttribute('pathLength');
-	}
+    function uniformAnimation(node: SVGPathElement) {
+        const length = node.getTotalLength();
+        const speed = 250;
+        
+        const dashLength = length * 0.25; 
+        const gapLength = length / 12;
+        
+        node.style.strokeDasharray = `${dashLength}px ${gapLength}px`;
+        
+        node.style.setProperty('--path-length', `${length}px`);
+        
+        const duration = length / speed;
+        node.style.animationDuration = `${duration}s`;
+        
+        node.removeAttribute('pathLength');
+    }
 </script>
 
 <section
@@ -127,17 +126,17 @@
 	.filled-letters path { stroke: none; }
 
 	.animated-outline path {
-		fill: transparent;
-		stroke: url(#flowing-gradient);
-		stroke-width: 4px;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		
-		stroke-dasharray: 25 8.33; 
-		animation: traceLine 4s linear infinite;
-	}
+        fill: transparent;
+        stroke: url(#flowing-gradient);
+        stroke-width: 4px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        
+        stroke-dasharray: 25px 8.33px; 
+        animation: traceLine 4s linear infinite;
+    }
 
-	@keyframes traceLine {
-		100% { stroke-dashoffset: calc(var(--path-length, 100) * -1); }
-	}
+    @keyframes traceLine {
+        100% { stroke-dashoffset: calc(var(--path-length, 100px) * -1); }
+    }
 </style>
