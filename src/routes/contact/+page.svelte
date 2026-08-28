@@ -73,8 +73,16 @@
                     <span class="social-arrow">↗</span>
                 </a>
 
-                <a href="mailto:me@rawsie.dev">
+                <a href="https://www.youtube.com/@RawsieDev" target="_blank" rel="noopener noreferrer">
                     <span class="social-number">02</span>
+
+                    <span class="social-name">YouTube</span>
+
+                    <span class="social-arrow">↗</span>
+                </a>
+
+                <a href="mailto:me@rawsie.dev">
+                    <span class="social-number">03</span>
 
                     <span class="social-name">Email</span>
 
@@ -185,10 +193,10 @@
 
     .topic-number {
         display: block;
-        margin-bottom: 45px;
+        margin-bottom: 20px;
 
         color: #686875;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .topic h3 {
@@ -223,7 +231,7 @@
     }
 
 	.socials {
-        margin-top: 70px;
+        margin-top: 40px;
     }
 
     .socials .section-label {
@@ -264,7 +272,7 @@
 
     .social-number {
         color: #686875;
-        font-size: 10px;
+        font-size: 12px;
 
         transition: color 0.2s ease;
     }

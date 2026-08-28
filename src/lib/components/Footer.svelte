@@ -20,6 +20,15 @@
 				</a>
 
 				<a
+					href="https://www.youtube.com/@RawsieDev"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="transition-colors duration-200 hover:text-white"
+				>
+					YouTube
+				</a>
+
+				<a
 					href="mailto:me@rawsie.dev"
 					class="transition-colors duration-200 hover:text-white"
 				>
