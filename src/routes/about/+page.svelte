@@ -108,7 +108,7 @@
 	</section>
 
 	<!-- Timeline -->
-	<section class="bg-[#0b0b12] px-5">
+	<section class="bg-[#0b0b12] px-5 pb-15">
 		<div class="mx-auto w-full max-w-275">
 			<div class="mb-12.5 text-[18px] tracking-[0.15em] text-[#686875]">
 				A LITTLE HISTORY
