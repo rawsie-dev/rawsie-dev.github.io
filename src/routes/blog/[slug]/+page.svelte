@@ -68,10 +68,12 @@
 			prose-headings:font-['Space_Grotesk']
 			prose-headings:text-[#f5f5fa]
 			prose-p:text-[#a1a1aa]
+			prose-td:text-[#a1a1aa]
+			prose-th:text-[#f5f5fa]
 			prose-strong:text-[#f5f5fa]
 			prose-a:text-[#5be4ff]
 			prose-a:no-underline
-			hover:prose-a:underline
+			prose-a:hover:underline
 			prose-li:text-[#a1a1aa]
 			prose-blockquote:border-[#5be4ff]
 			prose-blockquote:text-[#a1a1aa]
