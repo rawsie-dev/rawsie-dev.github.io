@@ -14,6 +14,7 @@
 	const links = [
 		{ name: 'About', href: '/about' },
 		{ name: 'Projects', href: '/projects' },
+		{ name: 'Piano', href: 'https://piano.rawsie.dev' },
 		{ name: 'Research', href: '/research' },
         { name: 'Blog', href: '/blog' },
 		{ name: 'Contact', href: '/contact' }
@@ -31,9 +32,10 @@
 		</a>
 		<div class="links">
 			{#each links as link (link.href)}
-				<a
-					href={resolve(link.href)}
-					class:active={page.url.pathname.startsWith(link.href)}
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+				<a href={link.href} class:active={page.url.pathname.startsWith(link.href)} 
+					target={link.name === 'Piano' ? '_blank' : undefined} 
+					rel={link.name === 'Piano' ? 'noopener noreferrer' : undefined}
 				>
 					{link.name}
 				</a>
@@ -61,11 +63,11 @@
     {#if mobileOpen}
         <div class="mobile-menu">
             {#each links as link (link.href)}
-                <a
-                    href={resolve(link.href)}
-                    class:active={page.url.pathname.startsWith(link.href)}
-                    onclick={() => mobileOpen = false}
-                >
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+                <a href={link.href} class:active={page.url.pathname.startsWith(link.href)} onclick={() => mobileOpen = false}
+					target={link.name === 'Piano' ? '_blank' : undefined} 
+					rel={link.name === 'Piano' ? 'noopener noreferrer' : undefined}
+				>
                     {link.name}
                 </a>
             {/each}
