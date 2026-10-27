@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+main {
+	/* Syntax highlighting in code blocks */
+	--color-prettylights-syntax-comment: #71717a;
+	--color-prettylights-syntax-constant: #5be4ff;
+	--color-prettylights-syntax-entity: #ffcdfe;
+	--color-prettylights-syntax-storage-modifier-import: #f5f5fa;
+	--color-prettylights-syntax-entity-tag: #cdffd9;
+	--color-prettylights-syntax-keyword: #ffcdfe;
+	--color-prettylights-syntax-string: #fcffa8;
+	--color-prettylights-syntax-variable: #5be4ff;
+	--color-prettylights-syntax-brackethighlighter-unmatched: #ff7b9c;
+	--color-prettylights-syntax-invalid-illegal-text: #f5f5fa;
+	--color-prettylights-syntax-invalid-illegal-bg: #5c1d2c;
+	--color-prettylights-syntax-carriage-return-text: #f5f5fa;
+	--color-prettylights-syntax-carriage-return-bg: #5c1d2c;
+	--color-prettylights-syntax-string-regexp: #cdffd9;
+	--color-prettylights-syntax-markup-list: #fcffa8;
+	--color-prettylights-syntax-markup-heading: #5be4ff;
+	--color-prettylights-syntax-markup-italic: #f5f5fa;
+	--color-prettylights-syntax-markup-bold: #f5f5fa;
+	--color-prettylights-syntax-markup-deleted-text: #ffd7e0;
+	--color-prettylights-syntax-markup-deleted-bg: #3d1420;
+	--color-prettylights-syntax-markup-inserted-text: #cdffd9;
+	--color-prettylights-syntax-markup-inserted-bg: #0f2e1c;
+	--color-prettylights-syntax-markup-changed-text: #fcffa8;
+	--color-prettylights-syntax-markup-changed-bg: #33300f;
+	--color-prettylights-syntax-markup-ignored-text: #a1a1aa;
+	--color-prettylights-syntax-markup-ignored-bg: #111118;
+	--color-prettylights-syntax-meta-diff-range: #ffcdfe;
+	--color-prettylights-syntax-brackethighlighter-angle: #a1a1aa;
+	--color-prettylights-syntax-sublimelinter-gutter-mark: #3f3f46;
+	--color-prettylights-syntax-constant-other-reference-link: #5be4ff;
+
+	/* Secondary buttons (e.g. "Preview", "Load more") */
+	--color-btn-text: #f5f5fa;
+	--color-btn-bg: #111118;
+	--color-btn-border: #27272a;
+	--color-btn-shadow: 0 0 transparent;
+	--color-btn-inset-shadow: 0 0 transparent;
+	--color-btn-hover-bg: rgb(91 228 255 / 6%);
+	--color-btn-hover-border: rgb(91 228 255 / 40%);
+	--color-btn-active-bg: rgb(91 228 255 / 10%);
+	--color-btn-active-border: rgb(91 228 255 / 50%);
+	--color-btn-selected-bg: rgb(91 228 255 / 8%);
+
+	/* Primary button ("Comment", "Sign in with GitHub"): cyan, turns white on hover */
+	--color-btn-primary-text: #0b0b12;
+	--color-btn-primary-bg: #5be4ff;
+	--color-btn-primary-border: transparent;
+	--color-btn-primary-shadow: 0 0 transparent;
+	--color-btn-primary-inset-shadow: 0 0 transparent;
+	--color-btn-primary-hover-bg: #f5f5fa;
+	--color-btn-primary-hover-border: transparent;
+	--color-btn-primary-selected-bg: #f5f5fa;
+	--color-btn-primary-selected-shadow: 0 0 transparent;
+	--color-btn-primary-disabled-text: rgb(11 11 18 / 60%);
+	--color-btn-primary-disabled-bg: rgb(91 228 255 / 35%);
+	--color-btn-primary-disabled-border: transparent;
+
+	--color-action-list-item-default-hover-bg: rgb(91 228 255 / 6%);
+	--color-segmented-control-bg: #111118;
+	--color-segmented-control-button-bg: #0b0b12;
+	--color-segmented-control-button-selected-border: #27272a;
+
+	/* Text */
+	--color-fg-default: #f5f5fa;
+	--color-fg-muted: #a1a1aa;
+	--color-fg-subtle: #71717a;
+
+	/* Surfaces: transparent so the page background shows through */
+	--color-canvas-default: transparent;
+	--color-canvas-overlay: #111118;
+	--color-canvas-inset: #0b0b12;
+	--color-canvas-subtle: #111118;
+
+	/* Borders */
+	--color-border-default: #27272a;
+	--color-border-muted: #1c1c22;
+	--color-neutral-muted: rgb(161 161 170 / 18%);
+
+	/* Accent: links, focus rings, your own reactions */
+	--color-accent-fg: #5be4ff;
+	--color-accent-emphasis: #5be4ff;
+	--color-accent-muted: rgb(91 228 255 / 40%);
+	--color-accent-subtle: rgb(91 228 255 / 10%);
+
+	--color-success-fg: #cdffd9;
+	--color-attention-fg: #fcffa8;
+	--color-attention-muted: rgb(252 255 168 / 40%);
+	--color-attention-subtle: rgb(252 255 168 / 12%);
+	--color-danger-fg: #ff7b9c;
+	--color-danger-muted: rgb(255 123 156 / 40%);
+	--color-danger-subtle: rgb(255 123 156 / 10%);
+
+	--color-primer-shadow-inset: 0 0 transparent;
+	--color-scale-gray-7: #1c1c22;
+	--color-scale-blue-8: rgb(91 228 255 / 15%);
+
+	/* Reactions: pink when hovering one you've already reacted with */
+	--color-social-reaction-bg-hover: rgb(91 228 255 / 8%);
+	--color-social-reaction-bg-reacted-hover: rgb(255 205 254 / 14%);
+
+	font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Headline ("3 comments", "3 reactions") in the site's heading font */
+main .gsc-comments-count,
+main .gsc-reactions-count {
+	font-family: 'Space Grotesk', Inter, sans-serif;
+	letter-spacing: -0.01em;
+}
+
+/* Comment cards: rounded like the site's cards */
+main .gsc-comment-box,
+main .gsc-comment > div {
+	border-radius: 16px;
+}
+
+main .gsc-comment-box-textarea:focus,
+main .gsc-comment-box:focus-within {
+	border-color: rgb(91 228 255 / 50%);
+	box-shadow: 0 0 0 3px rgb(91 228 255 / 10%);
+}
+
+/* Reaction chips: pill-shaped like the site's tags */
+main .gsc-direct-reaction-button,
+main .gsc-social-reaction-summary-item {
+	border-radius: 9999px;
+}
+
+main .gsc-social-reaction-summary-item.has-reacted {
+	border-color: rgb(91 228 255 / 40%);
+	background-color: rgb(91 228 255 / 8%);
+}
+
+main a:hover {
+	color: #ffcdfe;
+}
+
+main .pagination-loader-container {
+	background-image: url('https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg');
+}
+
+main .gsc-loading-image {
+	background-image: url('https://github.githubassets.com/images/mona-loading-dark.gif');
+}
