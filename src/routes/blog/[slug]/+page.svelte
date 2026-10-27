@@ -1,6 +1,7 @@
 <script>
     import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Giscus from '$lib/components/Giscus.svelte';
 	let { data } = $props();
     import { resolve } from '$app/paths';
 </script>
@@ -90,6 +91,9 @@
 			<PostContent />
 		{/if}
 	</div>
+
+	<div class="mt-16 h-px bg-[#27272a]"></div>
+	<Giscus />
 </article>
 
 <Footer />

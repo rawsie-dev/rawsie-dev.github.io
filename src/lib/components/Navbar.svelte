@@ -2,14 +2,10 @@
 	import { page } from '$app/state';
 	import Logo from '$lib/components/Logo.svelte';
 
-	let scrolled = $state(false);
-	let mobileOpen = $state(false);
+	let scrollY = $state(0);
+	let scrolled = $derived(scrollY > 20);
 
-	if (typeof window !== 'undefined') {
-		window.addEventListener('scroll', () => {
-			scrolled = window.scrollY > 20;
-		});
-	}
+	let mobileOpen = $state(false);
 
 	const links = [
 		{ name: 'About', href: '/about' },
@@ -23,9 +19,11 @@
 	import { resolve } from '$app/paths';
 </script>
 
+<svelte:window bind:scrollY />
+
 <nav class:scrolled>
 	<div class="nav-inner">
-		<a href={resolve("/")} class="logo flex items-center gap-2">
+		<a href={resolve("/")} class="logo group flex items-center gap-2" aria-label="Home">
 			<Logo class="w-10 h-10 text-[#5be4ff] group-hover:text-[#FFCDFE] transition-colors duration-300" />
 
 			<!-- <span class="font-fredoka">RAWSIE</span> -->

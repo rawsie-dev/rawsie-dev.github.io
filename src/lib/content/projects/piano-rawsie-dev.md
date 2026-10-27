@@ -2,12 +2,22 @@
 title: "piano.rawsie.dev"
 date: "2026-09-24"
 description: "Turns out I somewhat make music."
+status: "Completed"
+authors:
+  - "Rawsie"
+  - "Person #2"
 tags:
   - Personal
   - Blog
   - Music
+links:
+  - name: Website
+    url: https://piano.rawsie.dev
+
 featured: true
 hidden: false
+summary: |
+  A silly little website to showcase my music.
 ---
 
 <script>

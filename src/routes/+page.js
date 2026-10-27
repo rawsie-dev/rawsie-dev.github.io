@@ -130,7 +130,7 @@ export function load() {
 		.filter((research) => !research.metadata.hidden);
 		
 	
-		projectEntries.sort(
+		researchEntries.sort(
 			(a, b) =>
 				new Date(b.metadata.date).getTime() -
 				new Date(a.metadata.date).getTime()

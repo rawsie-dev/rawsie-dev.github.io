@@ -26,18 +26,12 @@
 		<div class="mx-auto grid w-full max-w-275 grid-cols-[0.8fr_1.2fr] gap-25 max-[750px]:relative max-[750px]:block max-[750px]:min-h-175">
 
 			<!-- Logo / Visual -->
-			<div
-				class="relative flex aspect-square isolate items-center justify-center overflow-hidden rounded-3xl border borborder-white/8-[#0b0b12] max-[750px]:absolute max-[750px]:inset-0 max-[750px]:h-full max-[750px]:w-full max-[750px]:rounded-none max-[750px]:border-0 max-[750px]:opacity-[0.16] max-[750px]:pointer-events-none"
-			>
+			<div class="relative flex aspect-square isolate items-center justify-center overflow-hidden rounded-3xl border border-white/8 max-[750px]:absolute max-[750px]:inset-0 max-[750px]:h-full max-[750px]:w-full max-[750px]:rounded-none max-[750px]:border-0 max-[750px]:opacity-[0.16] max-[750px]:pointer-events-none">
 				<Logo class="relative z-1 h-full w-full text-[#5be4ff] max-[750px]:h-[55%] max-[750px]:w-[55%]" />
 
-				<div
-					class="absolute -left-10 -top-10 z-0 h-70 w-[28w-70ded-full bg-[rgba(91,228,255,0.15)] blur-[50px]"
-				></div>
+				<div class="absolute -left-10 -top-10 z-0 h-70 w-70 rounded-full bg-[rgba(91,228,255,0.15)] blur-[50px]"></div>
 
-				<div
-					class="absolute -bottom-10 -right-10 z-0 h-70 w-[28w-70ded-full bg-[rgba(255,205,254,0.15)] blur-[50px]"
-				></div>
+				<div class="absolute -bottom-10 -right-10 z-0 h-70 w-70 rounded-full bg-[rgba(255,205,254,0.15)] blur-[50px]"></div>
 			</div>
 
 			<!-- Text -->

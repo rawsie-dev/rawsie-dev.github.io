@@ -21,7 +21,7 @@ Then, about a few months later, when I was writing another English story, I deci
 
 It wasn't until 2025 that I wrote another piece. I called it "Epic Song" as a temporary name, but that name has stuck ever since. It was truly my first real attempt at a good original piece, with a motif throughout. Albeit quite basic, I was happy with it for a while. But then I got tired of the piece. I couldn't figure out how to give it a proper ending. So right now it's left unfinished in my drafts.
 
-Not long after, I wrote "Dark Song", which has stayed and is currently a draft. Its motif closely resembles of [Awakening](https://piano.rawsie.dev)'s chorus. 
+Not long after, I wrote "Dark Song", which has stayed and is currently a draft. Its motif closely resembles [Awakening](https://piano.rawsie.dev)'s chorus. 
 
 Yes! Originally Awakening's chorus was meant to be part of a dark song. But its melody was too good not to use for a battle theme.
 
@@ -29,6 +29,6 @@ Hence, that was how Awakening was born. I had the chorus idea first, then incorp
 
 After Awakening (which took 7 months to write the piano version of. Mostly because I'd been busy or procrastinating haha), I thought of another motif. But this motif was special. It sounded very much like myself. So that was how the "Rawsie Motif" idea was born. It would be something that would represent me. I imagined that, wherever I went, if there were a melody radiating from me, it would be this one. It is simply "D - C# - A - A - B - F#". But for some reason, that melody resonated deeply with me. So I wrote [Rawsie Motif](https://piano.rawsie.dev) (Track #2), revolving around that motif. In the finished piece, the Rawsie motif is the verse part, the part that falls down, almost as an inverse of the Epic Song.
 
-nd that's where we are now. Somewhere along the way, I went from wanting to play other people's music to wanting to create my own. I still have so many ideas waiting to be put on paper.
+And that's where we are now. Somewhere along the way, I went from wanting to play other people's music to wanting to create my own. I still have so many ideas waiting to be put on paper.
 
 ### For now though, make sure to drink plenty of water, I'll be back to practicing.

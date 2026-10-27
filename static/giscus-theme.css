@@ -35,8 +35,8 @@ main {
 
 	/* Secondary buttons (e.g. "Preview", "Load more") */
 	--color-btn-text: #f5f5fa;
-	--color-btn-bg: #111118;
-	--color-btn-border: #27272a;
+	--color-btn-bg: #1c1c26;
+	--color-btn-border: #2e2e38;
 	--color-btn-shadow: 0 0 transparent;
 	--color-btn-inset-shadow: 0 0 transparent;
 	--color-btn-hover-bg: rgb(91 228 255 / 6%);
@@ -60,25 +60,27 @@ main {
 	--color-btn-primary-disabled-border: transparent;
 
 	--color-action-list-item-default-hover-bg: rgb(91 228 255 / 6%);
-	--color-segmented-control-bg: #111118;
-	--color-segmented-control-button-bg: #0b0b12;
-	--color-segmented-control-button-selected-border: #27272a;
+	/* Write / Preview tabs: the selected tab is a raised chip */
+	--color-segmented-control-bg: #16161f;
+	--color-segmented-control-button-bg: #22222e;
+	--color-segmented-control-button-selected-border: #3a3a46;
 
 	/* Text */
 	--color-fg-default: #f5f5fa;
 	--color-fg-muted: #a1a1aa;
 	--color-fg-subtle: #71717a;
 
-	/* Surfaces: transparent so the page background shows through */
-	--color-canvas-default: transparent;
-	--color-canvas-overlay: #111118;
+	/* Surfaces: filled cards on the #0b0b12 page, like the site's code blocks */
+	--color-canvas-default: #111118;
+	--color-canvas-overlay: #16161f;
 	--color-canvas-inset: #0b0b12;
-	--color-canvas-subtle: #111118;
+	--color-canvas-subtle: #16161f;
 
 	/* Borders */
 	--color-border-default: #27272a;
-	--color-border-muted: #1c1c22;
+	--color-border-muted: #1f1f27;
 	--color-neutral-muted: rgb(161 161 170 / 18%);
+	--color-neutral-subtle: rgb(161 161 170 / 8%);
 
 	/* Accent: links, focus rings, your own reactions */
 	--color-accent-fg: #5be4ff;
@@ -116,6 +118,17 @@ main .gsc-reactions-count {
 main .gsc-comment-box,
 main .gsc-comment > div {
 	border-radius: 16px;
+	overflow: hidden;
+	transition: border-color 0.25s ease;
+}
+
+/* Cyan border on hover, matching the blog cards */
+main .gsc-comment > div:hover {
+	border-color: rgb(91 228 255 / 40%);
+}
+
+main .gsc-comment-box-textarea {
+	background-color: #0b0b12;
 }
 
 main .gsc-comment-box-textarea:focus,

@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="order-3 sm:text-right">
-				© 2026
+				© {new Date().getFullYear()}
 			</div>
 		</div>
 	</div>
