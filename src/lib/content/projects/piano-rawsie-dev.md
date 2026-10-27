@@ -5,7 +5,6 @@ description: "Turns out I somewhat make music."
 status: "Completed"
 authors:
   - "Rawsie"
-  - "Person #2"
 tags:
   - Personal
   - Blog
