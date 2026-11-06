@@ -74,13 +74,13 @@
 
 		<div class="rainbow-line"></div>
 
-		<p class="mx-auto max-w-162.5 text-[clamp(20px,3vw,30px)] leading-[1.4] text-[#d0d0d8]">
+		<!-- <p class="mx-auto max-w-162.5 text-[clamp(20px,3vw,30px)] leading-[1.4] text-[#d0d0d8]">
 			I build things with
 			<span class="text-[#5be4ff]">code</span>,
 			<span class="text-[#5be4ff]">AI</span>,
 			and
 			<span class="text-[#ffcdfe]">curiosity</span>.
-		</p>
+		</p> -->
 
 		<div class="mt-10 flex justify-center gap-3.5 max-[600px]:flex-col max-[600px]:items-center">
 			<a href="#projects" class="rounded-full bg-white px-5 py-3.25 text-[14px] text-[#0b0b12] no-underline transition-transform duration-200 ease-in-out hover:-translate-y-0.5 max-[600px]:w-45 max-[600px]:text-center">

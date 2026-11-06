@@ -15,49 +15,52 @@
 
 <style>
 	.header {
-		padding: 150px 0 50px;
+		padding: 150px 20px 30px;
 		background: #0b0b12;
+		/* border-color: #ffffff;
+		border-width: 1px; */
 	}
 
 	.container {
-		width: min(1100px, calc(100% - 40px));
+		width: 100%;
+		max-width: 1100px;
 		margin: auto;
 	}
 
 	h1 {
-		max-width: 1000px;
+        max-width: 1000px;
+        margin: 0;
 
-		margin: 0;
+        color: white;
 
-		color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(52px, 6vw, 88px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
 
-		font-family: 'Space Grotesk', sans-serif;
-		font-size: clamp(52px, 6vw, 88px);
-		line-height: 0.92;
-		letter-spacing: -0.065em;
-	}
+    h1 :global(.cyan) {
+        color: #5be4ff;
+    }
 
-	h1 :global(.cyan) {
-		color: #5be4ff;
-	}
+    h1 :global(.pink) {
+        color: #ffcdfe;
+    }
 
-	h1 :global(.pink) {
-		color: #ffcdfe;
-	}
+    p {
+        max-width: 650px;
+        margin: 32px 0 0;
 
-	p {
-		max-width: 650px;
-		margin: 40px 0 0;
+        color: #b7b7bd;
 
-		color: #888895;
+        font-size: 18px;
+        line-height: 1.7;
+    }
 
-		font-size: 18px;
-		line-height: 1.7;
-	}
-
-	@media (max-width: 600px) {
-		.header {
-			padding-top: 140px;
-		}
-	}
+    @media (max-width: 600px) {
+        .header {
+            padding-top: 100px;
+            padding-bottom: 24px;
+        }
+    }
 </style>

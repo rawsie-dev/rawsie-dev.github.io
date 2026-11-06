@@ -30,11 +30,16 @@
 	<main>
 		<Hero />
 		<div class="my-20 h-px bg-[#27272a]"></div>
-		<BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
-		<div class="my-20 h-px bg-[#27272a]"></div>
-		<ProjectsPreview featuredProjects={data.featuredProjects} />
-		<div class="my-20 h-px bg-[#27272a]"></div>
-		<ResearchPreview featuredResearch={data.featuredResearch} />
+		<section class="rounded-3xl border border-[#ffffff] bg-[#121215]/50 p-8 sm:p-12 backdrop-blur-sm">
+            <BlogPreview featuredPosts={data.featuredPosts} recentPosts={data.recentPosts} />
+        </section>
+		<section class="rounded-3xl border border-[#ffffff] bg-[#121215]/50 p-8 sm:p-12 backdrop-blur-sm">
+			<ProjectsPreview featuredProjects={data.featuredProjects} />
+		</section>
+		<!-- <div class="my-20 h-px bg-[#27272a]"></div> -->
+		<section class="rounded-3xl border border-[#ffffff] bg-[#121215]/50 p-8 sm:p-12 backdrop-blur-sm">
+			<ResearchPreview featuredResearch={data.featuredResearch} />
+		</section>
 		<div class="my-10 h-px"></div>
 	</main>
 

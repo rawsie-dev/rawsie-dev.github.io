@@ -22,7 +22,7 @@
 
 <main>
 	<!-- About -->
-	<section class="bg-[#0b0b12] px-5 pb-37.5 pt-20 max-[750px]:pb-25 max-[750px]:pt-15">
+	<section class="bg-[#0b0b12] px-5 pb-15 pt-10 max-[750px]:pb-10 max-[750px]:pt-8">
 		<div class="mx-auto grid w-full max-w-275 grid-cols-[0.8fr_1.2fr] gap-25 max-[750px]:relative max-[750px]:block max-[750px]:min-h-175">
 
 			<!-- Logo / Visual -->
@@ -40,7 +40,7 @@
 					Heya! I'm <span class="text-[#5be4ff]">Rawsie</span>
 				</p>
 
-				<div class="space-y-6 text-base leading-[1.8] text-[#888895]">
+				<div class="space-y-6 text-base leading-[1.8] text-[#a6a6b5]">
 					<p>
 						I'm a student, researcher, and occasional music artist who enjoys understanding
 						how things work, finding ways to improve them, and creating things that reflect
@@ -73,11 +73,11 @@
 
 		<!-- Facts -->
 		<div class="mx-auto w-full max-w-275">
-			<div class="mt-15 grid grid-cols-3 gap-3.75 max-[750px]:grid-cols-1">
+			<div class="mt-10 grid grid-cols-3 gap-3.75 max-[750px]:grid-cols-1">
 				<div class="border-t border-white/10 pt-5">
 					<span class="text-[12px] text-[#5be4ff]">01</span>
 					<h3 class="mb-2 mt-3.75 text-[15px] text-white">AI Research</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#686875]">
+					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
 						Exploring how neural networks learn.
 					</p>
 				</div>
@@ -85,7 +85,7 @@
 				<div class="border-t border-white/10 pt-5">
 					<span class="text-[12px] text-[#5be4ff]">02</span>
 					<h3 class="mb-2 mt-3.75 text-[15px] text-white">Software Development</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#686875]">
+					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
 						Learning, experimenting, and building practical products.
 					</p>
 				</div>
@@ -93,7 +93,7 @@
 				<div class="border-t border-white/10 pt-5">
 					<span class="text-[12px] text-[#5be4ff]">03</span>
 					<h3 class="mb-2 mt-3.75 text-[15px] text-white">Creative Work</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#686875]">
+					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
 						Making things that feel like mine, including some music composition.
 					</p>
 				</div>
@@ -104,7 +104,7 @@
 	<!-- Timeline -->
 	<section class="bg-[#0b0b12] px-5 pb-15">
 		<div class="mx-auto w-full max-w-275">
-			<div class="mb-12.5 text-[18px] tracking-[0.15em] text-[#686875]">
+			<div class="mb-3 text-[18px] tracking-[0.15em] text-[#a3a3b6]">
 				A LITTLE HISTORY
 			</div>
 
@@ -115,7 +115,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">What's next?</h3>
-						<p class="m-0 text-[14px] text-[#686875]">Still figuring that part out.</p>
+						<p class="m-0 text-[14px] text-[#a3a3b6]">Still figuring that part out.</p>
 					</div>
 				</div>
 
@@ -125,7 +125,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">rawsie.dev</h3>
-						<p class="m-0 text-[14px] text-[#686875]">
+						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							Started building and putting my websites, projects, and ideas out into the world.
 						</p>
 					</div>
@@ -137,7 +137,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">AI research</h3>
-						<p class="m-0 text-[14px] text-[#686875]">
+						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							My first real exposure to AI research, and the beginning of wanting to understand
 							what happens beyond simply using AI.
 						</p>
@@ -150,7 +150,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">A new environment</h3>
-						<p class="m-0 text-[14px] text-[#686875]">
+						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							Joined High School of the Gifted and started taking my interest in computer
 							science more seriously.
 						</p>
@@ -163,7 +163,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">A small turning point</h3>
-						<p class="m-0 text-[14px] text-[#686875]">
+						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							Won my first competitive programming prize. It was small, but it made me realize
 							I wanted to keep going.
 						</p>
@@ -176,7 +176,7 @@
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">A new beginning</h3>
-						<p class="m-0 text-[14px] text-[#686875]">
+						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							My first real exposure to a computer. I had no idea what I was doing, but I've
 							been hooked ever since.
 						</p>
