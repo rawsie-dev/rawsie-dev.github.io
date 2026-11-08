@@ -1,17 +1,59 @@
-<script>
+<script lang="ts">
 	import { resolve } from '$app/paths';
 
 	let { featuredProjects = [] } = $props();
+
+    const statusStyles: Record<string, {
+        text: string;
+        border: string;
+        background: string;
+    }> = {
+        Completed: {
+            text: '#86efac',
+            border: '#86efac40',
+            background: '#86efac08'
+        },
+        Ongoing: {
+            text: '#fde68a',
+            border: '#fde68a40',
+            background: '#fde68a08'
+        },
+        Archived: {
+            text: '#71717a',
+            border: '#71717a40',
+            background: '#71717a08'
+        }
+    };
 </script>
 
 <main>
-    <section class="mx-auto max-w-6xl px-6" id="projects">
+    <section 
+        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all hover:border-[#38BFA7]/40 hover:bg-[#38BFA7]/3 group/projects"
+        role="link"
+        id="projects"
+        tabindex="0"
+        
+        onclick={(event) => {
+            const target = event.target;
+            if (target instanceof Element && target.closest('a')) return;
+            window.location.href = resolve('/projects');
+        }}
+
+        onkeydown={(event) => {
+            if (event.target !== event.currentTarget) return;
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                window.location.href = resolve('/projects');
+            }
+        }}
+    >
+
         <div class="mb-10">
-            <p class="text-sm font-medium uppercase tracking-widest text-[#5be4ff]">
+            <p class="text-sm font-medium uppercase tracking-widest text-[#f5f5f5]">
                 Things I've built and experimented with.
             </p>
 
-            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5fa] sm:text-5xl">
+            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover/projects:text-[#38BFA7] sm:text-5xl">
                 Projects
             </h2>
         </div>
@@ -26,9 +68,14 @@
 
                 <div class="space-y-6">
                     {#each featuredProjects as post (post.slug)}
+                        {@const status = statusStyles[post.metadata.status] ?? statusStyles.Archived}
                         <a
                             href={resolve(`/projects/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10"
+                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10"
+                            style="
+                                border-color: {status.border};
+                                background-color: {status.background};
+                            "
                         >
                             <!-- Header -->
                             <div class="flex items-start justify-between gap-6">
@@ -52,9 +99,22 @@
 
                             <!-- Title -->
                             <h2
-                                class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5fa] transition-colors duration-300 group-hover:text-[#5be4ff] sm:text-5xl"
+                                class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover:text-(--status-color) sm:text-5xl" style={`--status-color: ${status.text}`}
                             >
                                 {post.metadata.title}
+
+                                {#if post.metadata.status}
+                                        <span
+                                            class="inline-block -translate-y-3 rounded-full border px-3 py-1.5 text-xs font-medium"
+                                            style="
+                                                color: {status.text};
+                                                border-color: {status.border};
+                                                background-color: {status.background};
+                                            "
+                                        >
+                                            {post.metadata.status}
+                                        </span>
+                                    {/if}
                             </h2>
 
                             <!-- Description -->
@@ -109,7 +169,7 @@
         <div class="mt-8 text-center">
             <a
                 href={resolve("/projects")}
-                class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5fa]"
+                class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5f5]"
             >
                 View all projects →
             </a>

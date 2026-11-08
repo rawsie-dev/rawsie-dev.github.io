@@ -5,13 +5,32 @@
 </script>
 
 <main>
-    <section class="mx-auto max-w-6xl px-6" id="research">
+    <section 
+        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all hover:border-[#FF9F43]/40 hover:bg-[#FF9F43]/3 group/research"
+        role="link"
+        id="projects"
+        tabindex="0"
+        
+        onclick={(event) => {
+            const target = event.target;
+            if (target instanceof Element && target.closest('a')) return;
+            window.location.href = resolve('/research');
+        }}
+
+        onkeydown={(event) => {
+            if (event.target !== event.currentTarget) return;
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                window.location.href = resolve('/research');
+            }
+        }}
+    >
         <div class="mb-10">
-            <p class="text-sm font-medium uppercase tracking-widest text-[#5be4ff]">
+            <p class="text-sm font-medium uppercase tracking-widest text-[#f5f5f5]">
                 Questions I've explored and investigated.
             </p>
 
-            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5fa] sm:text-5xl">
+            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover/research:text-[#FF9F43] sm:text-5xl">
                 Research
             </h2>
         </div>
@@ -52,7 +71,7 @@
 
                             <!-- Title -->
                             <h2
-                                class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5fa] transition-colors duration-300 group-hover:text-[#5be4ff] sm:text-5xl"
+                                class="mt-8 max-w-4xl text-4xl font-bold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover:text-[#5be4ff] sm:text-5xl"
                             >
                                 {post.metadata.title}
                             </h2>
@@ -110,7 +129,7 @@
         <div class="mt-8 text-center">
             <a
                 href={resolve("/research")}
-                class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5fa]"
+                class="text-sm font-medium text-[#5be4ff] transition-colors hover:text-[#f5f5f5]"
             >
                 View all research →
             </a>
