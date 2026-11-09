@@ -1,11 +1,11 @@
 <script>
-	let { title, description = '' } = $props();
+	let { title, description = '', titleColor = 'white' } = $props();
 </script>
 
 <section class="header">
 	<div class="container">
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-		<h1 class="font-bold">{@html title}</h1>
+		<h1 class="font-bold" style:color={titleColor}>{@html title}</h1>
 
 		{#if description}
 			<p>{description}</p>

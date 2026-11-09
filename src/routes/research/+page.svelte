@@ -37,7 +37,7 @@
 		content="A collection of research, experiments, and ideas I've explored while learning more about AI and computer science."
 	/>
 </svelte:head>
-<PageHeader title="Research" description="A collection of research, experiments, and ideas I've explored while learning more about AI and computer science."/>
+<PageHeader title="Research" description="A collection of research, experiments, and ideas I've explored while learning more about AI and computer science." titleColor="#FF9F43"/>
 
 <main>
 	<div class="mx-auto max-w-6xl px-6 py-10">
@@ -55,7 +55,7 @@
                         {@const status = statusStyles[post.metadata.status] ?? statusStyles.Archived}
                         <a
                             href={resolve(`/research/${post.slug}`)}
-                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10"
+                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10 hover:-translate-y-2"
                             style="
                                 border-color: {status.border};
                                 background-color: {status.background};
@@ -162,7 +162,7 @@
 
                         <a
                             href={resolve(`/research/${post.slug}`)}
-                            class="group block rounded-2xl border p-6 transition-all duration-300"
+                            class="group block rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-2"
                             style="
                                 border-color: {status.border};
                                 background-color: {status.background};

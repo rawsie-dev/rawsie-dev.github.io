@@ -28,7 +28,7 @@
 
 <main>
     <section 
-        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all hover:border-[#38BFA7]/40 hover:bg-[#38BFA7]/3 group/projects"
+        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all duration-300 hover:border-[#38BFA7]/40 hover:bg-[#38BFA7]/3 group/projects hover:-translate-y-4"
         role="link"
         id="projects"
         tabindex="0"
@@ -71,7 +71,7 @@
                         {@const status = statusStyles[post.metadata.status] ?? statusStyles.Archived}
                         <a
                             href={resolve(`/projects/${post.slug}`)}
-                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10"
+                            class="group block rounded-2xl border p-8 transition-all duration-300 sm:p-10 hover:-translate-y-2"
                             style="
                                 border-color: {status.border};
                                 background-color: {status.background};

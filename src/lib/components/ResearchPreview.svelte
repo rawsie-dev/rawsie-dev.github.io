@@ -6,7 +6,7 @@
 
 <main>
     <section 
-        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all hover:border-[#FF9F43]/40 hover:bg-[#FF9F43]/3 group/research"
+        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all duration-300 hover:border-[#FF9F43]/40 hover:bg-[#FF9F43]/3 group/research hover:-translate-y-4"
         role="link"
         id="projects"
         tabindex="0"
@@ -47,7 +47,7 @@
                     {#each featuredResearch as post (post.slug)}
                         <a
                             href={resolve(`/research/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10"
+                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10 hover:-translate-y-2"
                         >
                             <!-- Header -->
                             <div class="flex items-start justify-between gap-6">

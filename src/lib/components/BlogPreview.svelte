@@ -6,7 +6,7 @@
 
 <main>
     <section 
-        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all hover:border-[#FFCDFE]/40 hover:bg-[#FFCDFE]/2 group/blog"
+        class="mx-auto max-w-6xl px-8 py-10 border border-[#f5f5f5]/20 rounded-3xl transition-all duration-300 hover:border-[#FFD6A5]/40 hover:bg-[#FFD6A5]/2 group/blog hover:-translate-y-4"
         role="link"
         tabindex="0"
         
@@ -29,7 +29,7 @@
                 A place for random thoughts.
             </p>
 
-            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover/blog:text-[#FFCDFE] sm:text-5xl">
+            <h2 class="mt-2 text-4xl font-semibold tracking-tight text-[#f5f5f5] transition-colors duration-300 group-hover/blog:text-[#FFD6A5] sm:text-5xl">
                 Blog
             </h2>
         </div>
@@ -42,14 +42,14 @@
                         FEATURED
                     </span>
 
-                    <div class="h-px flex-1 bg-[#323236]"></div>
+                    <div class="h-px flex-1 bg-[#4a4a4a]"></div>
                 </div>
 
                 <div class="grid gap-6 sm:grid-cols-2">
                     {#each featuredPosts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#323236] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5"
+                            class="group block rounded-2xl border border-[#4a4a4a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <time datetime={post.metadata.date} class="text-sm text-[#71717a]">
                                 {new Date(post.metadata.date).toLocaleDateString('en-US', {
@@ -89,14 +89,14 @@
                         LATEST POSTS
                     </span>
 
-                    <div class="h-px flex-1 bg-[#323236]"></div>
+                    <div class="h-px flex-1 bg-[#4a4a4a]"></div>
                 </div>
 
                 <div class="space-y-4">
                     {#each recentPosts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#323236] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5"
+                            class="group block rounded-2xl border border-[#4a4a4a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                                 <time

@@ -15,7 +15,7 @@
 		content="A place for random thoughts about whatever happens to interest me and I find worth sharing."
 	/>
 </svelte:head>
-<PageHeader title="Blog" description="A place for random thoughts about whatever happens to interest me and I find worth sharing."/>
+<PageHeader title="Blog" description="A place for random thoughts about whatever happens to interest me and I find worth sharing." titleColor="#FFD6A5"/>
 <main>
     <div class="mx-auto max-w-6xl px-6 py-10">
 
@@ -31,7 +31,7 @@
 					{#each data.featuredPosts as post (post.slug)}
 						<a
 							href={resolve(`/blog/${post.slug}`)}
-							class="group rounded-2xl border border-[#27272a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5"
+							class="group rounded-2xl border border-[#27272a] p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
 						>
 							<time
 								datetime={post.metadata.date}
@@ -82,7 +82,7 @@
                     {#each data.posts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5"
+                            class="group block rounded-2xl border border-[#27272a] p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <article>
                                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
