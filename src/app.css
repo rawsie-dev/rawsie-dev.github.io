@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import 'katex/dist/katex.min.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -12,6 +13,138 @@
 
 body {
     background-color: #0b0b12;
+}
+
+.prose .katex {
+    color: #f5f5fa;
+}
+
+.prose grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-block: 1.5rem;
+}
+
+.prose grid[columns="1"] {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.prose grid[columns="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.prose grid[columns="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.prose grid[gap="1"] {
+    gap: 0.25rem;
+}
+
+.prose grid[gap="2"] {
+    gap: 0.5rem;
+}
+
+.prose grid[gap="4"] {
+    gap: 1rem;
+}
+
+.prose grid-item {
+    display: block;
+    min-width: 0;
+}
+
+.prose box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background: #111118;
+}
+
+.prose box[border] {
+    border: 1px solid #27272a;
+}
+
+.prose box[radius="lg"] {
+    border-radius: 0.75rem;
+}
+
+.prose box[radius="md"] {
+    border-radius: 0.5rem;
+}
+
+.prose box[gap="2"] {
+    gap: 0.5rem;
+}
+
+.prose box[gap="3"] {
+    gap: 0.75rem;
+}
+
+.prose text,
+.prose title {
+    display: block;
+}
+
+.prose text {
+    color: #a1a1aa;
+}
+
+.prose text[weight="medium"] {
+    font-weight: 500;
+}
+
+.prose text[size="xs"] {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.prose text[size="sm"] {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.prose title {
+    color: #f5f5fa;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.prose title[color="success"] {
+    color: #86efac;
+}
+
+.prose title[tabularnums] {
+    font-variant-numeric: tabular-nums;
+}
+
+.prose badge {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.prose badge[color="success"] {
+    border-color: #86efac40;
+    background: #86efac12;
+    color: #86efac;
+}
+
+@media (max-width: 640px) {
+    .prose grid,
+    .prose grid[columns="3"],
+    .prose grid[columns="4"] {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 .rainbow-line {

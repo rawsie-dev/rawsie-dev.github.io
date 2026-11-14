@@ -189,6 +189,13 @@
 			prose-code:text-pink-200
 			prose-code:before:content-none
 			prose-code:after:content-none
+			[&_code]:rounded
+			[&_code]:bg-[#1b1b24]
+			[&_code]:px-1.5
+			[&_code]:py-0.5
+			[&_pre_code]:bg-transparent
+			[&_pre_code]:p-0
+			prose-pre:overflow-x-auto
 			prose-pre:rounded-xl
 			prose-pre:border
 			prose-pre:border-[#27272a]
