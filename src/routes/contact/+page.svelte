@@ -11,7 +11,8 @@
 	import {
 		siGithub,
 		siYoutube,
-		siBluesky
+		siBluesky,
+		siDiscord
 	} from 'simple-icons'
 </script>
 
@@ -35,7 +36,7 @@
 	<section class="contact">
 		<div class="container">
 			<nav class="contact-list" aria-label="Contact links">
-				<a href="mailto:me@rawsie.dev">
+				<a href="mailto:me@rawsie.dev" class="contact-item">
 					<span class="icon" aria-hidden="true">
                         <Mail size={19} strokeWidth={1.6} />
                     </span>
@@ -44,7 +45,7 @@
 					<span class="link">me@rawsie.dev</span>
 				</a>
 
-				<a href="https://github.com/rawsie-dev" target="_blank" rel="noopener noreferrer">
+				<a href="https://github.com/rawsie-dev" class="contact-item" target="_blank" rel="noopener noreferrer">
 					<span class="icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" class="brand-icon github-icon">
                             <path d={siGithub.path} fill="currentColor" />
@@ -56,7 +57,7 @@
 					<ArrowUpRight class="arrow" size={18} strokeWidth={1.6} aria-hidden="true" />
 				</a>
 
-				<a href="https://www.youtube.com/@RawsieDev" target="_blank" rel="noopener noreferrer">
+				<a href="https://www.youtube.com/@RawsieDev" class="contact-item" target="_blank" rel="noopener noreferrer">
 					<span class="icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" class="brand-icon youtube-icon">
                             <path d={siYoutube.path} fill="currentColor" />
@@ -68,7 +69,7 @@
 					<ArrowUpRight class="arrow" size={18} strokeWidth={1.6} aria-hidden="true" />
 				</a>
 
-				<a href="https://bsky.app/profile/rawsie.dev" target="_blank" rel="noopener noreferrer">
+				<a href="https://bsky.app/profile/rawsie.dev" class="contact-item" target="_blank" rel="noopener noreferrer">
 					<span class="icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" class="brand-icon bluesky-icon">
                             <path d={siBluesky.path} fill="currentColor" />
@@ -79,6 +80,17 @@
 					<span class="link">@rawsie.dev</span>
 					<ArrowUpRight class="arrow" size={18} strokeWidth={1.6} aria-hidden="true" />
 				</a>
+
+				<div class="contact-item">
+					<span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="brand-icon discord-icon">
+                            <path d={siDiscord.path} fill="currentColor" />
+                        </svg>
+                    </span>
+					<span class="name">Discord</span>
+					<span class="dash" aria-hidden="true"></span>
+					<span class="link">@rawsie.dev</span>
+				</div>
 			</nav>
 		</div>
 	</section>
@@ -103,7 +115,7 @@
 		border-top: 1px solid rgba(255, 255, 255, 0.09);
 	}
 
-	.contact-list a {
+	.contact-item {
 		display: grid;
 		grid-template-columns: 20px 110px 24px minmax(0, 1fr) 24px;
 		column-gap: 8px;
@@ -118,7 +130,7 @@
 			padding 0.2s ease;
 	}
 
-	.contact-list a:hover {
+	.contact-item:hover {
 		padding-left: 12px;
 		background: rgba(91, 228, 255, 0.025);
 	}
@@ -138,8 +150,8 @@
 		color: #a1a1b0;
 	}
 
-	.contact-list a:hover .name,
-	.contact-list a:hover .link {
+	.contact-item:hover .name,
+	.contact-item:hover .link {
 		color: #5be4ff;
 	}
 
@@ -177,19 +189,27 @@
 		--brand-color: #0085ff;
 	}
 
-	.contact-list a:hover .github-icon {
+	.discord-icon {
+		--brand-color: #5865f2;
+	}
+
+	.contact-item:hover .github-icon {
 		color: var(--brand-color);
 	}
 
-	.contact-list a:hover .youtube-icon {
+	.contact-item:hover .youtube-icon {
 		color: var(--brand-color);
 	}
 
-	.contact-list a:hover .bluesky-icon {
+	.contact-item:hover .bluesky-icon {
+		color: var(--brand-color);
+	}
+	
+	.contact-item:hover .discord-icon {
 		color: var(--brand-color);
 	}
 
-	.contact-list a:hover :global(.arrow) {
+	.contact-item:hover :global(.arrow) {
 		color: #ffcdfe;
 		transform: translate(3px, -3px);
 	}
@@ -203,7 +223,7 @@
 			width: calc(100% - 32px);
 		}
 
-		.contact-list a {
+		.contact-item {
 			grid-template-columns: 20px 84px 18px minmax(0, 1fr) 18px;
 			min-height: 68px;
 			font-size: 14px;
@@ -211,7 +231,7 @@
 	}
 
 	@media (max-width: 420px) {
-		.contact-list a {
+		.contact-item {
 			grid-template-columns: 20px 74px 14px minmax(0, 1fr) 16px;
 		}
 	}

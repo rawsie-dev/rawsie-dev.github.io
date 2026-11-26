@@ -3,6 +3,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Logo from '$lib/components/Logo.svelte';
 	import PageHeader from '$lib/components/PageHeader.svelte';
+
+	import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -17,7 +19,7 @@
 
 <PageHeader
 	title="About Me"
-	description="Learn more about me, my interest, background and the things I build."
+	description="Learn more about me, my interests, background and the things I build."
 />
 
 <main>
@@ -42,59 +44,54 @@
 
 				<div class="space-y-6 text-base leading-[1.8] text-[#a6a6b5]">
 					<p>
-						I'm a student, researcher, and occasional music artist who enjoys understanding
-						how things work, finding ways to improve them, and creating things that reflect
-						who I am.
+						I'm a student, researcher, and occasional music artist who enjoys understanding how things work and making things of my own.
 					</p>
 
 					<p>
-						I am interested in
+						I am particularly interested in
 						<span class="text-[#FFCDFE]">AI research</span>,
 						<span class="text-[#FFCDFE]">software development</span>
 						and
-						<span class="text-[#FFCDFE]">creative music work</span>
-						&mdash; a combination you would not expect at first.
+						<span class="text-[#FFCDFE]">music composition</span>, which is a combination you would not expect at first.
 					</p>
 
 					<p>
-						I enjoy building things that turn ideas into products that I or other people can
-						actually use. I love seeing some kind of materialisation of my work into something
-						tangible.
+						I especially enjoy turning ideas into products that I or other people can actually use. There's something satisfying about seeing an idea take shape into something tangible.
 					</p>
 
 					<p>
-						Outside of research, I like building small websites, games, tools, and other things
-						that give me an excuse to learn something new. I also occasionally dabble in some
-						music composition just because I feel like it.
+						Outside of research, I spend time building small websites, games, tools, playing piano and occasionally dabbling in some music composition.
 					</p>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<!-- Facts -->
+	<!-- few things about me -->
+	<section class="bg-[#0b0b12] px-5 pb-15">
 		<div class="mx-auto w-full max-w-275">
-			<div class="mt-10 grid grid-cols-3 gap-3.75 max-[750px]:grid-cols-1">
-				<div class="border-t border-white/10 pt-5">
-					<span class="text-[12px] text-[#5be4ff]">01</span>
-					<h3 class="mb-2 mt-3.75 text-[15px] text-white">AI Research</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
-						Exploring how neural networks learn.
+			<div class="mb-3 text-[18px] tracking-widest text-[#a3a3b6]">
+				A few things about me
+			</div>
+			<div class="mt-3 grid grid-cols-2 gap-3.75 max-[750px]:grid-cols-1">
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Music person</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						I've been playing piano for years, but only started composing my own music more recently.
 					</p>
 				</div>
 
-				<div class="border-t border-white/10 pt-5">
-					<span class="text-[12px] text-[#5be4ff]">02</span>
-					<h3 class="mb-2 mt-3.75 text-[15px] text-white">Software Development</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
-						Learning, experimenting, and building practical products.
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Math nerd wannabe</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						I'm not the best at math, but I find abstract concepts like topology, enormous numbers (Graham's number, TREE(3), and so on), and problems like the Collatz Conjecture fascinating.
 					</p>
 				</div>
 
-				<div class="border-t border-white/10 pt-5">
-					<span class="text-[12px] text-[#5be4ff]">03</span>
-					<h3 class="mb-2 mt-3.75 text-[15px] text-white">Creative Work</h3>
-					<p class="m-0 text-[12px] leading-normal text-[#a3a3b6]">
-						Making things that feel like mine, including some music composition.
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Wplace</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						I occasionally enjoy pixel painting on <a href="https://wplace.live" class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">Wplace</a>.
 					</p>
 				</div>
 			</div>
@@ -105,13 +102,13 @@
 	<section class="bg-[#0b0b12] px-5 pb-15">
 		<div class="mx-auto w-full max-w-275">
 			<div class="mb-3 text-[18px] tracking-[0.15em] text-[#a3a3b6]">
-				A LITTLE HISTORY
+				THE JOURNEY SO FAR
 			</div>
 
 			<div class="max-w-200">
 				<!-- Now -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">NOW</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">NOW</span>
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">What's next?</h3>
@@ -120,62 +117,62 @@
 				</div>
 
 				<!-- 2026 -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t  border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">2026</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2026</span>
 
 					<div>
 						<h3 class="mb-2 mt-0 text-[20px] text-white">rawsie.dev</h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
-							Started building and putting my websites, projects, and ideas out into the world.
+							Started building and putting my websites, projects, and ideas out into the world, particularly through this nifty website <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">rawsie.dev</a>.
 						</p>
 					</div>
 				</div>
 
 				<!-- 2025 -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">2025</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2025</span>
 
 					<div>
-						<h3 class="mb-2 mt-0 text-[20px] text-white">AI research</h3>
+						<h3 class="mb-2 mt-0 text-[20px] text-white">First AI Research</h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
-							My first real exposure to AI research, and the beginning of wanting to understand
-							what happens beyond simply using AI.
+							My first real exposure to AI research, exploring lightweight synthetic image detection. Eventually got the paper published at MediaEval 2025. 
+							More info can be found <a href={resolve(`/research/synthetic-image-detection`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">here</a>.
 						</p>
 					</div>
 				</div>
 
 				<!-- 2024 -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">2024</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2024</span>
 
 					<div>
-						<h3 class="mb-2 mt-0 text-[20px] text-white">A new environment</h3>
+						<h3 class="mb-2 mt-0 text-[20px] text-white">A New Environment</h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
-							Joined High School of the Gifted and started taking my interest in computer
-							science more seriously.
+							Joined VNU-HCM High School of the Gifted (PTNK) and started taking my interest in Computer
+							Science more seriously.
 						</p>
 					</div>
 				</div>
 
 				<!-- 2019 -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">2019</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2019</span>
 
 					<div>
-						<h3 class="mb-2 mt-0 text-[20px] text-white">A small turning point</h3>
+						<h3 class="mb-2 mt-0 text-[20px] text-white">A Small Turning Point</h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							Won my first competitive programming prize. It was small, but it made me realize
-							I wanted to keep going.
+							Computer Science was something I wanted to pursue.
 						</p>
 					</div>
 				</div>
 
 				<!-- 2017 -->
-				<div class="grid grid-cols-[100px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[60px_1fr] max-[750px]:gap-5">
-					<span class="text-[12px] text-[#5be4ff]">2017</span>
+				<div class="about-card grid grid-cols-[110px_1fr] gap-7.5 border-t border-white/8 py-7.5 max-[750px]:grid-cols-[65px_1fr] max-[750px]:gap-4">
+					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2017</span>
 
 					<div>
-						<h3 class="mb-2 mt-0 text-[20px] text-white">A new beginning</h3>
+						<h3 class="mb-2 mt-0 text-[20px] text-white">A New Beginning</h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
 							My first real exposure to a computer. I had no idea what I was doing, but I've
 							been hooked ever since.
@@ -185,6 +182,62 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="bg-[#0b0b12] px-5 pb-15">
+		<div class="mx-auto w-full max-w-275">
+			<div class="mb-1 text-[18px] tracking-[0.15em] text-[#a3a3b6]">
+				CURRENTLY
+			</div>
+			<div class="mt-3 grid grid-cols-2 gap-3.75 max-[750px]:grid-cols-1">
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Writing music</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						Working on new songs and experimenting with more unique musical ideas.
+					</p>
+				</div>
+
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Building</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						Developing <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">rawsie.dev</a> and working on personal software projects.
+					</p>
+				</div>
+
+				<div class="about-card border-t border-white/10 pt-5 pb-5">
+					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Applying</h3>
+					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
+						Making my way through the university application season.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
 </main>
 
 <Footer />
+
+<style>
+	.about-card {
+		transition:
+			transform 180ms ease-out,
+			border-color 180ms ease-out;
+	}
+
+	.about-card:hover {
+		transform: translateY(-4px);
+		border-color: rgb(255 255 255 / 0.2);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.about-card {
+			transition: none;
+		}
+
+		.about-card:hover {
+			transform: none;
+		}
+	}
+</style>
