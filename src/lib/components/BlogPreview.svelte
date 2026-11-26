@@ -42,14 +42,14 @@
                         FEATURED
                     </span>
 
-                    <div class="h-px flex-1 bg-[#4a4a4a]"></div>
+                    <div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
                 </div>
 
                 <div class="grid gap-6 sm:grid-cols-2">
                     {#each featuredPosts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#4a4a4a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
+                            class="group block rounded-2xl border border-[#f5f5f5]/20 p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <time datetime={post.metadata.date} class="text-sm text-[#71717a]">
                                 {new Date(post.metadata.date).toLocaleDateString('en-US', {
@@ -89,14 +89,14 @@
                         LATEST POSTS
                     </span>
 
-                    <div class="h-px flex-1 bg-[#4a4a4a]"></div>
+                    <div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
                 </div>
 
                 <div class="space-y-4">
                     {#each recentPosts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#4a4a4a] p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
+                            class="group block rounded-2xl border border-[#f5f5f5]/20 p-6 transition-all hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                                 <time

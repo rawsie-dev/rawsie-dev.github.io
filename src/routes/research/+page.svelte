@@ -47,7 +47,7 @@
             <section class="mb-24">
                 <div class="mb-8 flex items-center gap-4">
                     <span class="text-sm font-medium text-[#5be4ff]">FEATURED</span>
-                    <div class="h-px flex-1 bg-[#27272a]"></div>
+                    <div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
                 </div>
 
                 <div class="space-y-6">
@@ -116,7 +116,7 @@
                             {/if}
 
                             <!-- Divider -->
-                            <div class="my-10 h-px bg-[#27272a]"></div>
+                            <div class="my-10 h-px bg-[#f5f5f5]/20"></div>
 
                             <!-- Bottom -->
                             <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -148,7 +148,7 @@
 		<section>
 			<div class="mb-8 flex items-center gap-4">
 				<span class="text-sm font-medium text-[#5be4ff]">ALL PROJECTS</span>
-				<div class="h-px flex-1 bg-[#27272a]"></div>
+				<div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
 			</div>
 
 			{#if data.research.length === 0}

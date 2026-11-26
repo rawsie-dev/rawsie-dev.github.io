@@ -40,10 +40,10 @@
 			{/each}
 		</div>
 
-		<div class="status">
+		<a href={resolve('/about#currently')} class="status" aria-label="See what I am currently building">
 			<span class="dot"></span>
-			<span>building</span>
-		</div>
+			<span>currently</span>
+		</a>
 
 		<button
             class:open={mobileOpen}
@@ -159,6 +159,18 @@
 
 		color: #686875;
 		font-size: 11px;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.status:hover,
+	.status:focus-visible {
+		color: #fff;
+	}
+
+	.status:focus-visible {
+		outline: 1px solid #5be4ff;
+		outline-offset: 5px;
 	}
 
 	.dot {

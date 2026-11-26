@@ -121,9 +121,9 @@
 					<span class="pt-1 text-[15px] font-medium tracking-[0.3em] text-[#5be4ff]">2026</span>
 
 					<div>
-						<h3 class="mb-2 mt-0 text-[20px] text-white">rawsie.dev</h3>
+						<h3 class="mb-2 mt-0 text-[20px] text-white"><a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" rel="noopener noreferrer">rawsie.dev</a></h3>
 						<p class="m-0 text-[14px] text-[#a3a3b6]">
-							Started building and putting my websites, projects, and ideas out into the world, particularly through this nifty website <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">rawsie.dev</a>.
+							Started building and putting my websites, projects, and ideas out into the world, particularly through this nifty website <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" rel="noopener noreferrer">rawsie.dev</a>.
 						</p>
 					</div>
 				</div>
@@ -183,7 +183,7 @@
 		</div>
 	</section>
 
-	<section class="bg-[#0b0b12] px-5 pb-15">
+	<section id="currently" class="scroll-mt-24 bg-[#0b0b12] px-5 pb-15">
 		<div class="mx-auto w-full max-w-275">
 			<div class="mb-1 text-[18px] tracking-[0.15em] text-[#a3a3b6]">
 				CURRENTLY
@@ -199,7 +199,7 @@
 				<div class="about-card border-t border-white/10 pt-5 pb-5">
 					<h3 class="mb-2 mt-3.75 text-[18px] text-white">Building</h3>
 					<p class="m-0 text-[14px] leading-normal text-[#a3a3b6]">
-						Developing <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" target="_blank" rel="noopener noreferrer">rawsie.dev</a> and working on personal software projects.
+						Developing <a href={resolve(`/`)} class="text-[#5be4ff] transition-colors duration-200 hover:underline" rel="noopener noreferrer">rawsie.dev</a> and working on personal software projects.
 					</p>
 				</div>
 

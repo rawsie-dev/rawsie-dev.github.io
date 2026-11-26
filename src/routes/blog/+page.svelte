@@ -24,14 +24,14 @@
 			<section class="mb-20">
 				<div class="mb-8 flex items-center gap-4">
 					<span class="text-sm font-medium text-[#5be4ff]">FEATURED</span>
-					<div class="h-px flex-1 bg-[#27272a]"></div>
+					<div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
 				</div>
 
 				<div class="grid gap-6 sm:grid-cols-2">
 					{#each data.featuredPosts as post (post.slug)}
 						<a
 							href={resolve(`/blog/${post.slug}`)}
-							class="group rounded-2xl border border-[#27272a] p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
+							class="group rounded-2xl border border-[#f5f5f5]/20 p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
 						>
 							<time
 								datetime={post.metadata.date}
@@ -71,7 +71,7 @@
         <section>
             <div class="mb-8 flex items-center gap-4">
                 <span class="text-sm font-medium text-[#5be4ff]">ALL POSTS</span>
-                <div class="h-px flex-1 bg-[#27272a]"></div>
+                <div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
             </div>
             {#if data.posts.length === 0}
                 <p class="text-[#71717a]">
@@ -82,7 +82,7 @@
                     {#each data.posts as post (post.slug)}
                         <a
                             href={resolve(`/blog/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
+                            class="group block rounded-2xl border border-[#f5f5f5]/20 p-6 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/5 hover:-translate-y-2"
                         >
                             <article>
                                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

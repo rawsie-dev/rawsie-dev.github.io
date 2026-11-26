@@ -40,14 +40,14 @@
             <section class="mb-8">
                 <div class="mb-8 flex items-center gap-4">
                     <span class="text-sm font-medium text-[#5be4ff]">FEATURED</span>
-                    <div class="h-px flex-1 bg-[#27272a]"></div>
+                    <div class="h-px flex-1 bg-[#f5f5f5]/20"></div>
                 </div>
 
                 <div class="space-y-6">
                     {#each featuredResearch as post (post.slug)}
                         <a
                             href={resolve(`/research/${post.slug}`)}
-                            class="group block rounded-2xl border border-[#27272a] p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10 hover:-translate-y-2"
+                            class="group block rounded-2xl border border-[#f5f5f5]/20 p-8 transition-all duration-300 hover:border-[#5be4ff]/40 hover:bg-[#5be4ff]/3 sm:p-10 hover:-translate-y-2"
                         >
                             <!-- Header -->
                             <div class="flex items-start justify-between gap-6">
@@ -89,7 +89,7 @@
                             {/if}
 
                             <!-- Divider -->
-                            <div class="my-10 h-px bg-[#27272a]"></div>
+                            <div class="my-10 h-px bg-[#f5f5f5]/20"></div>
 
                             <!-- Bottom -->
                             <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
